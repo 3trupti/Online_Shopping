@@ -1,2 +1,78 @@
-<p>register works!</p>
-<h1>Register for Pratiksha</h1>
+<div style="background-color:black;">
+    
+    <h1>QuickMart</h1>
+  
+</div>
+<div class="row">
+    <div class="main">
+        <div class="card">
+           
+<form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
+    <div class="container">
+
+    <div>
+        <label for="uname"><b>Username :</b></label>
+        <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
+        <span *ngIf="name.errors?.required">Name has to be entered</span>
+    </div>
+    
+	 <div>
+        <label for="addr"><b>Address :</b></label>
+        <input type="text" name="address" [(ngModel)]="model.address" placeholder="Enter Address" #address="ngModel" required>
+        <span *ngIf="address.errors?.required">Address has to be entered</span>
+    </div>
+	
+	<div>
+        <label for="email"><b>Email :</b></label>
+        <input type="email" name="txtemail" [(ngModel)]="model.txtemail" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" placeholder="Enter Email" #txtemail="ngModel" required>
+        <span *ngIf="txtemail.errors?.required">Email cannot be blank</span>
+        <span *ngIf="txtemail.errors?.pattern">Follow Email restriction</span>
+    </div>
+	
+	
+    <div>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" minlength="8" maxlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?.*[#$%&])" required>
+        <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
+        <span *ngIf="txtpass.errors?.pattern">Follow password restriction</span>
+        <span *ngIf="txtpass.errors?.minlength">Minimum password length is 4 characters</span>
+    </div>
+	
+	
+
+	<div>
+        <label for="mobile"><b>Mobile No.</b></label>
+        <input type="tel" name="mno" [(ngModel)]="model.mno" #mno="ngModel" pattern="^[0-9]{10}$" placeholder="Enter Mobile No." required>
+        <span *ngIf="mno.errors?.required">Mobile No cannot be blank</span>
+        <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
+    </div>
+
+    <div>
+        <br>
+        <label for="type"><b>UserType :</b></label>
+        <select name="Type" [(ngModel)]="model.Type" #Type="ngModel" required>
+            <option value="Customer">Customer</option>
+            <option value="Retailer">Retailer</option>
+        </select><br>
+        <span *ngIf="Type.errors?.required">Type must be selected.</span>
+          
+    </div>
+	
+    
+    <div>
+    
+        <button type="submit" [disabled]="regform.invalid">Register</button>
+  </div>
+  <div>
+      Already have an account ? <a href=""><b>Login Here</b></a>
+  </div>
+	
+    </div>
+
+	
+	
+</form>
+
+</div>
+</div>
+</div>
