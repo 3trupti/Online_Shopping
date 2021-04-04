@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormsModule,NgForm,FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,20 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username:string;
-  password:string;
-
+  model:any=[];
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
   }
-  LoginUser()
-  {
-    if(this.username=="Admin" && this.password=="Admin123")
-    {
-      console.log("Welcome Admin")
-    }
+  
+  LoginData(loginform:NgForm):void{
+    console.log(loginform.value);
   }
+
   
 
 }
+
