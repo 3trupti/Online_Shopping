@@ -1,8 +1,13 @@
+<div style="background-color:black;">
+    
+    <h1>QuickMart</h1>
+  
+</div>
 <form>
     <div class="=input">
         <label><b>Username</b></label>
         <input type="text" name="username" [(ngModel)]=username  placeholder="Enter Username" required>
-        <span *ngIf="username.errors?.required">Name has to be entered</span>
+        <span *ngIf="username.errors?.required">username has to be entered</span>
     </div>
     <div class="input">
         <label>Password</label>
