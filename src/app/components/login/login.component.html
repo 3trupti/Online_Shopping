@@ -1,11 +1,12 @@
 <form>
     <div class="=input">
-        <label>Username</label>
-        <input type="text" name="username" [(ngModel)]=username>
+        <label><b>Username</b></label>
+        <input type="text" name="username" [(ngModel)]=username  placeholder="Enter Username" required>
+        <span *ngIf="username.errors?.required">Name has to be entered</span>
     </div>
     <div class="input">
         <label>Password</label>
-        <input type="password" name="password" [(ngModel)]="password">
+        <input type="password" name="password" [(ngModel)]="password"  placeholder="Enter Password">
     </div>
     <div class="input">
         <input type="submit" value="Login" (click)="LoginUser()">
@@ -13,5 +14,11 @@
 
     <div class="input">
         <input type="submit" value="Forgot Password" (click)="ForgotPassword()">
+    </div>
+    <div>
+        Didn't have an account ? <a href=""><b>Register Here</b></a>
+    </div>
+    <div>
+        Forgot Password ? <a href=""><b>Reset Here</b></a>
     </div>
 </form>
