@@ -1,29 +1,42 @@
-<div style="background-color:black;">
+<div style="background-color:black;">
+    
+        <h1>QuickMart</h1>
+      
+    </div>
+    <div class="row">
+        <div class="main">
+            <div class="card">
+               
+    <form #regform="ngForm" name="loginform" (ngSubmit)="LoginData(loginform)">
+        <div class="container">
     
-    <h1>QuickMart</h1>
-  
-</div>
-<form>
-    <div class="=input">
-        <label><b>Username</b></label>
-        <input type="text" name="username" [(ngModel)]=username  placeholder="Enter Username" required>
-        <span *ngIf="username.errors?.required">username has to be entered</span>
+        <div>
+            <label for="uname"><b>UserName :</b></label>
+            <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
+            <span *ngIf="name.errors?.required">Name has to be entered</span>
+        </div>
+        
+        <div>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" required>
+            <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
+    </div>   
+    
+        <div>
+        
+            <button type="submit" [disabled]="loginform.invalid">Login</button>
+      </div>
+      <div>
+          Forgot Password ? <a href=""><b> Reset Here</b></a>
+      </div>
+        
+        </div>
+    
+        
+        
+    </form>
+    
     </div>
-    <div class="input">
-        <label>Password</label>
-        <input type="password" name="passwch4ord" [(ngModel)]="password"  placeholder="Enter Password">
     </div>
-    <div class="input">
-        <input type="submit" value="Login" (click)="LoginUser()">
     </div>
-
-    <div class="input">
-        <input type="submit" value="Forgot Password" (click)="ForgotPassword()">
-    </div>
-    <div>
-        Didn't have an account ? <a href=""><b>Register Here</b></a>
-    </div>
-    <div>
-        Forgot Password ? <a href=""><b>Reset Here</b></a>
-    </div>
-</form>
+    
