@@ -32,9 +32,9 @@
 	
     <div>
         <label for="psw"><b>Password</b></label>
-        <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" minlength="8" maxlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?.*[#$%&])" required>
+        <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" minlength="8" maxlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
         <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
-        <span *ngIf="txtpass.errors?.pattern">Follow password restriction</span>
+        <span *ngIf="txtpass.errors?.pattern">Follow password restriction </span>
         <span *ngIf="txtpass.errors?.minlength">Minimum password length is 4 characters</span>
     </div>
 	
@@ -54,6 +54,7 @@
             <option value="Customer">Customer</option>
             <option value="Retailer">Retailer</option>
         </select><br>
+        <br>
         <span *ngIf="Type.errors?.required">Type must be selected.</span>
           
     </div>
