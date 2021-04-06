@@ -1,0 +1,35 @@
+<div style="background-color:black;">
+    
+    <h1>QuickMart</h1>
+  
+</div>
+<h1 style="color: black;"><b>Admin's Profile</b></h1>
+<div class="row">
+    <div class="main">
+        <div class="card">
+           
+<form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
+    <div class="container">
+
+   
+	
+    
+    <div>
+    
+        <button type="submit" [disabled]="regform.invalid">Add Retailer</button>
+  </div>
+  <div>
+    
+    <button type="submit" [disabled]="regform.invalid">View Retailer</button>
+</div>
+  
+	
+    </div>
+
+	
+	
+</form>
+
+</div>
+</div>
+</div>

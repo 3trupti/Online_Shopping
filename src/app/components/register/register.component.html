@@ -47,7 +47,7 @@
         <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
     </div>
 
-    <div>
+   <!-- <div>
         <br>
         <label for="type"><b>UserType :</b></label>
         <select name="Type" [(ngModel)]="model.Type" #Type="ngModel" required>
@@ -57,13 +57,17 @@
         <br>
         <span *ngIf="Type.errors?.required">Type must be selected.</span>
           
-    </div>
+    </div>-->
 	
     
     <div>
     
-        <button type="submit" [disabled]="regform.invalid">Register</button>
+        <button type="submit" [disabled]="regform.invalid">Register as Retailer</button>
   </div>
+  <div>
+    
+    <button type="submit" [disabled]="regform.invalid">Register as Customer</button>
+</div>
   <div>
       Already have an account ? <a href=""><b>Login Here</b></a>
   </div>

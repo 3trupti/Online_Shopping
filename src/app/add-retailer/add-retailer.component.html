@@ -1,0 +1,59 @@
+<div style="background-color:black;">
+    
+    <h1>QuickMart</h1>
+  
+</div>
+<div class="row">
+    <div class="main">
+        <div class="card">
+           
+<form #regform="ngForm" name="regform" (ngSubmit)="Data(regform)">
+    <div class="container">
+        <div>
+            <label for="retid"><b>Retailer ID :</b></label>
+            <input type="text" name="rid" [(ngModel)]="model.rid" placeholder="Enter Retailer's ID" #rid="ngModel" required>
+            <span *ngIf="rid.errors?.required">ID has to be entered</span>
+        </div>
+
+    <div>
+        <label for="uname"><b>Retailer Name :</b></label>
+        <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Retailer Name" #name="ngModel" required>
+        <span *ngIf="name.errors?.required">Name has to be entered</span>
+    </div>
+    
+	
+	<div>
+        <label for="email"><b>Email :</b></label>
+        <input type="email" name="txtemail" [(ngModel)]="model.txtemail" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" placeholder="Enter Email" #txtemail="ngModel" required>
+        <span *ngIf="txtemail.errors?.required">Email cannot be blank</span>
+        <span *ngIf="txtemail.errors?.pattern">Follow Email restriction</span>
+    </div>
+	
+	
+  
+	
+
+	<div>
+        <label for="mobile"><b>Mobile No.</b></label>
+        <input type="tel" name="mno" [(ngModel)]="model.mno" #mno="ngModel" pattern="^[0-9]{10}$" placeholder="Enter Mobile No." required>
+        <span *ngIf="mno.errors?.required">Mobile No cannot be blank</span>
+        <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
+    </div>
+
+  
+    
+    <div>
+    
+        <button type="submit" [disabled]="regform.invalid">Add Retailer</button>
+  </div>
+ 
+	
+    </div>
+
+	
+	
+</form>
+
+</div>
+</div>
+</div>
