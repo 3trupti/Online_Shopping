@@ -1,0 +1,56 @@
+
+
+<div style="background-color:black;">
+    
+    <h1>QuickShop</h1>
+  
+</div>
+<div class="row">
+    <div class="main">
+        <div class="card">
+           
+<form #regform="ngForm" name="regform" (ngSubmit)="Data(regform)">
+    <div class="container">
+     
+    <div>
+        <label for="uname"><b>Product Name :</b></label>
+        <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Product Name" #name="ngModel" required>
+        <span *ngIf="name.errors?.required">Name has to be entered</span>
+    </div>
+    
+	
+	<div>
+        <label for="desc"><b>Description :</b></label>
+        <input type="text" name="desc" [(ngModel)]="model.desc"  placeholder="Enter Description" #desc="ngModel" required>
+        <span *ngIf="desc.errors?.required">Description cannot be blank</span>
+        
+    </div>
+	
+	
+  
+	
+
+	<div>
+        <label for="Price"><b>Price</b></label>
+        <input type="tel" name="price" [(ngModel)]="model.price" #price="ngModel" pattern="^[0-9]{10}$" placeholder="Enter Price" required>
+        <span *ngIf="price.errors?.required">Price cannot be blank</span>
+        
+    </div>
+
+  
+    
+    <div>
+    
+        <button type="submit" [disabled]="regform.invalid">Add Product</button>
+  </div>
+ 
+	
+    </div>
+
+	
+	
+</form>
+
+</div>
+</div>
+</div>
