@@ -1,6 +1,6 @@
 <div style="background-color:black;">
     
-    <h1>QuickMart</h1>
+    <h1>QuickShop</h1>
   
 </div>
 <div class="row">
@@ -15,11 +15,40 @@
         <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
         <span *ngIf="name.errors?.required">Name has to be entered</span>
     </div>
+
+    <div>
+        <label for="mobile"><b>Mobile No.</b></label>
+        <input type="tel" name="mno" [(ngModel)]="model.mno" #mno="ngModel" pattern="^[0-9]{10}$" placeholder="Enter Mobile No." required>
+        <span *ngIf="mno.errors?.required">Mobile No cannot be blank</span>
+        <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
+    </div>
     
 	 <div>
         <label for="addr"><b>Address :</b></label>
         <input type="text" name="address" [(ngModel)]="model.address" placeholder="Enter Address" #address="ngModel" required>
         <span *ngIf="address.errors?.required">Address has to be entered</span>
+    </div>
+    <div>
+        <label for="country"><b>Country :</b></label>
+        <input type="text" name="country" [(ngModel)]="model.country" placeholder="Enter country" #country="ngModel" required>
+        <span *ngIf="country.errors?.required">Country has to be entered</span>
+    </div>
+
+    <div>
+        <label for="state"><b>State :</b></label>
+        <input type="text" name="state" [(ngModel)]="model.state" placeholder="Enter State" #state="ngModel" required>
+        <span *ngIf="state.errors?.required">State has to be entered</span>
+    </div>
+
+    <div>
+        <label for="city"><b>City :</b></label>
+        <input type="text" name="city" [(ngModel)]="model.city" placeholder="Enter City" #city="ngModel" required>
+        <span *ngIf="city.errors?.required">City has to be entered</span>
+    </div>
+    <div>
+        <label for="code"><b>Postal Code :</b></label>
+        <input type="text" name="code" [(ngModel)]="model.code" placeholder="Enter Postal Code" #code="ngModel" required>
+        <span *ngIf="code.errors?.required">Postal Code has to be entered</span>
     </div>
 	
 	<div>
@@ -40,14 +69,9 @@
 	
 	
 
-	<div>
-        <label for="mobile"><b>Mobile No.</b></label>
-        <input type="tel" name="mno" [(ngModel)]="model.mno" #mno="ngModel" pattern="^[0-9]{10}$" placeholder="Enter Mobile No." required>
-        <span *ngIf="mno.errors?.required">Mobile No cannot be blank</span>
-        <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
-    </div>
+	
 
-    <div>
+   <!-- <div>
         <br>
         <label for="type"><b>UserType :</b></label>
         <select name="Type" [(ngModel)]="model.Type" #Type="ngModel" required>
@@ -57,13 +81,17 @@
         <br>
         <span *ngIf="Type.errors?.required">Type must be selected.</span>
           
-    </div>
+    </div>-->
 	
     
     <div>
     
-        <button type="submit" [disabled]="regform.invalid">Register</button>
+        <button type="submit" [disabled]="regform.invalid">Register as Retailer</button>
   </div>
+  <div>
+    
+    <button type="submit" [disabled]="regform.invalid">Register as Customer</button>
+</div>
   <div>
       Already have an account ? <a href=""><b>Login Here</b></a>
   </div>
