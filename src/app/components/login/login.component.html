@@ -1,13 +1,35 @@
-<form>
-    <div class="=input">
-        <label>Username</label>
-        <input type="text" name="username" [(ngModel)]=username>
-    </div>
-    <div class="input">
-        <label>Password</label>
-        <input type="password" name="password" [(ngModel)]="password">
-    </div>
-    <div class="input">
-        <input type="submit" value="Login" (click)="LoginUser()">
-    </div>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<div style="background-color:blue;">
+    
+    <h1>QuickShop</h1>
+</div>
+
+
+<body>
+
+
+    <form>
+        <div class="=input">
+            <label>Username</label>
+            <input type="text" name="username" [(ngModel)]=username>
+        </div>
+        <div class="input">
+            <label>Password</label>
+            <input type="password" name="password" [(ngModel)]="password">
+        </div>
+        <div class="input">
+            <input type="submit" value="Login" (click)="LoginUser()">
+        </div>
+    </form>
+    
+    
+</body>
+</html>
+

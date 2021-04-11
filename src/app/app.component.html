@@ -1,44 +1,13 @@
-<<<<<<< HEAD
-=======
-<div>
-  
-  <app-home-page></app-home-page>
-  
-  <app-register></app-register>
-  <app-add-retailer></app-add-retailer>
-  <app-add-product></app-add-product>
-  <app-admin-profile></app-admin-profile>
-
->>>>>>> eebd7dec21f4887081519e07600eb4181f0b2aa1
-
- 
+<!--- header-->
+<app-header></app-header>
 
 
-<router-outlet>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary pl-5 fixed-top">
-    <a routerLink ="Home" class="navbar-brand text-white" >QuickShop</a>
-    <span class="navbar-text text-white">Best Deals Here</span>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="myMenu">
-      <ul class="navbar-nav pl-5 custom-nav">
-        <li class="nav-item"><a routerLink="Home" class="nav-link text-white">Home</a></li>
-        <li class="nav-item"><a routerLink="#Categories" class="nav-link text-white">Categories</a></li>
-        <li class="nav-item"><a routerLink="#Compare" class="nav-link text-white">Compare</a></li>
-        <li class="nav-item"><a routerLink="#Cart" class="nav-link text-white">Cart</a></li>
-        <li class="nav-item"><a routerLink="Login" class="nav-link text-white">Login</a></li>
-        <li class="nav-item"><a routerLink="Register" class="nav-link text-white">Signup</a></li>
-      </ul>
-    </div>
-  </nav> <!-- End Navigation -->
 
- <!----<ul>
-    <li><a routerLink = "Home">Home</a></li>
-    <li><a routerLink = "Register">Register</a></li>
-    
-  </ul>-->
 
-  
-  
-</router-outlet>
+<!---- routes will be rendered here--->
+<router-outlet></router-outlet>
+
+
+
+<!---- footer--->
+<app-footer></app-footer>
