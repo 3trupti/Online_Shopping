@@ -16,6 +16,7 @@ import{CoreModule} from './core/core.module';
 import{HeaderComponent} from './core/corecomponents/header/header.component';
 import{FooterComponent} from './core/corecomponents/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
+import {ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -27,11 +28,14 @@ import { CartComponent } from './components/cart/cart.component';
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
+<<<<<<< HEAD
     HeaderComponent,
     FooterComponent,
     CartComponent
+=======
+    ForgotPasswordComponent
+>>>>>>> 9c6d27e9dcd9dca5ac98b23fc94b28642244c0d1
    
-    
   ],
   imports: [
     BrowserModule,

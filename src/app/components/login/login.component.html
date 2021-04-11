@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,3 +34,46 @@
 </body>
 </html>
 
+=======
+<div style="background-color:black;">
+    
+        <h1>QuickMart</h1>
+      
+    </div>
+    <div class="row">
+        <div class="main">
+            <div class="card">
+               
+    <form #loginform="ngForm" name="loginform" (ngSubmit)="LoginData(loginform)">
+        <div class="container">
+    
+        <div>
+            <label for="uname"><b>UserName :</b></label>
+            <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
+            <span *ngIf="name.errors?.required">Name has to be entered</span>
+        </div>
+        
+        <div>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" required>
+            <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
+    </div>   
+    
+        <div>
+        
+            <button type="submit" [disabled]="loginform.invalid">Login</button>
+      </div>
+      <div>
+          Forgot Password ? <a href=""><b> Reset Here</b></a>
+      </div>
+        
+        </div>
+    
+        
+        
+    </form>
+    
+    </div>
+    </div>
+    </div>
+>>>>>>> 9c6d27e9dcd9dca5ac98b23fc94b28642244c0d1
