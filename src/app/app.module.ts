@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import{ HomePageComponent } from './components/home-page/home-page.component';
 import{ RegisterComponent } from './components/register/register.component';
 <<<<<<< HEAD
-import {LoginComponent} from './components/login/login.component';
+import {LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 =======
 <<<<<<< HEAD
