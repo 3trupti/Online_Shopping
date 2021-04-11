@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,22 +18,25 @@
     <form>
         <div class="=input">
             <label>Username</label>
-            <input type="text" name="username" [(ngModel)]=username>
+            <input type="text" name="username" [(ngModel)]="model.username">
         </div>
         <div class="input">
             <label>Password</label>
-            <input type="password" name="password" [(ngModel)]="password">
+            <input type="password" name="password" [(ngModel)]="model.password">
         </div>
-        <div class="input">
-            <input type="submit" value="Login" (click)="LoginUser()">
-        </div>
+        <div>
+    
+                    <button type="submit" [disabled]="loginform.invalid">Login</button>
+              </div>
+             <div>
+                      Forgot Password ? <a href=""><b> Reset Here</b></a>
+                  </div>
     </form>
     
     
 </body>
 </html>
 
-=======
 <div style="background-color:black;">
     
         <h1>QuickMart</h1>
@@ -76,4 +78,3 @@
     </div>
     </div>
     </div>
->>>>>>> 9c6d27e9dcd9dca5ac98b23fc94b28642244c0d1

@@ -28,13 +28,10 @@ import {ForgotPasswordComponent } from './components/forgot-password/forgot-pass
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
-<<<<<<< HEAD
     HeaderComponent,
     FooterComponent,
-    CartComponent
-=======
+    CartComponent,
     ForgotPasswordComponent
->>>>>>> 9c6d27e9dcd9dca5ac98b23fc94b28642244c0d1
    
   ],
   imports: [
