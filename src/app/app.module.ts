@@ -12,6 +12,11 @@ import { RouterModule } from '@angular/router';
 import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import{CoreModule} from './core/core.module';
+import{HeaderComponent} from './core/corecomponents/header/header.component';
+import{FooterComponent} from './core/corecomponents/footer/footer.component';
+import { CartComponent } from './components/cart/cart.component';
+import {ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -25,7 +30,6 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     LoginComponent,
     
    
-    
   ],
   imports: [
     BrowserModule,
