@@ -17,6 +17,9 @@ import{HeaderComponent} from './core/corecomponents/header/header.component';
 import{FooterComponent} from './core/corecomponents/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import {ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import {ForgotPasswordComponent } from './components/forgot-password/forgot-pass
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
+    AdminHomeComponent,
+    RetailerHomeComponent,
+    CustomerHomeComponent,
     
    
   ],
