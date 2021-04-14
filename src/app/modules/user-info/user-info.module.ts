@@ -34,4 +34,11 @@ export class UserInfoModule {
   Retailer_PostalCode : string;
   Retailer_Email : string;
   Retailer_Password : string;
+
+
+  Admin_ID:string;
+  Admin_Name :string;
+  Admin_Email :string;
+  Admin_Contact :string;
+  Admin_Password :string;
 }

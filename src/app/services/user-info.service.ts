@@ -10,6 +10,9 @@ import {HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserInfoService {
+ /* Login(name: string, pwd: string) {
+    throw new Error('Method not implemented.');
+  }*/
   User:UserInfoModule
   http:HttpClient;
   url:string ='http://localhost:57646/api/UserApi';
@@ -29,6 +32,12 @@ export class UserInfoService {
     return this.http.post<boolean>(this.url + "/" + "InsertCustomer1", User, this.httpOptions);
   }
 
+  Login(name:string, pwd:string):Observable<string>
+  {
+    return this.http.get<string>(this.url+'/'+'Login'+'/'+ name +'/'+ pwd);
+  }
+  
+ 
 
   
 }
