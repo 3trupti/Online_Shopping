@@ -51,20 +51,22 @@ export class RegisterComponent implements OnInit {
   if(this.CusUser.Customer_Type=="Customer"){
     
     this.svc.InsertCustomer(this.CusUser).subscribe((data : boolean)=>{
-      alert(data);
       if(data==true)
       {
      alert('New Customer Registered');
+     regform.reset();
       }
       });}
     
     else{
 
         this.svc.InsertCustomer1(this.RetUser).subscribe((data : boolean)=>{
-          alert(data);
           if(data==true)
           {
          alert('New Retailer Registered');
+         regform.reset();
+
+
           }
           });}
 

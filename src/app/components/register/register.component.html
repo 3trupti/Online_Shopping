@@ -1,6 +1,5 @@
 <div style="background-color:black;">
     
-    <h1>QuickShop</h1>
   
 </div>
 <div class="row">
@@ -68,14 +67,14 @@
     </div>
 	
 	
-<div>
+<!--<div>
     <label for="type"><b>UserType :</b></label>
     <input type="text" name="Type" [(ngModel)]="model.Type" placeholder="Enter Type" #Type="ngModel"  >
 
-</div>
+</div>-->
 	
 
-   <!--<div>
+   <div>
         <br>
         <label for="type"><b>UserType :</b></label>
         <select name="Type" [(ngModel)]="model.Type" #Type="ngModel" required>
@@ -85,7 +84,7 @@
         <br>
         <span *ngIf="Type.errors?.required">Type must be selected.</span>
           
-    </div>-->
+    </div>
 	
     
   <!-- <div>
@@ -97,7 +96,7 @@
     <button type="submit" [disabled]="regform.invalid">Register</button>
 </div>
   <div>
-      Already have an account ? <a href=""><b>Login Here</b></a>
+      Already have an account ? <a href="login"><b>Login Here</b></a>
   </div>
 	
     </div>

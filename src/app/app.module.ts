@@ -32,7 +32,9 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    FooterComponent,
+    HeaderComponent,
     
    
   ],
@@ -43,6 +45,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    CoreModule,
 
     
   ],
