@@ -28,10 +28,7 @@ import {ForgotPasswordComponent } from './components/forgot-password/forgot-pass
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
-    HeaderComponent,
-    FooterComponent,
-    CartComponent,
-    ForgotPasswordComponent
+    
    
   ],
   imports: [
@@ -41,7 +38,7 @@ import {ForgotPasswordComponent } from './components/forgot-password/forgot-pass
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    CoreModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
