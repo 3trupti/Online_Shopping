@@ -22,6 +22,7 @@ import { RetailerHomeComponent } from './components/retailer-home/retailer-home.
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,11 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminHomeComponent,
     RetailerHomeComponent,
     CustomerHomeComponent,
+    ForgotPasswordComponent,
+    HeaderComponent,
+    FooterComponent,
+    CartComponent,
+    CoreModule
     
    
   ],
