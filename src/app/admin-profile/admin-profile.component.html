@@ -4,32 +4,53 @@
   
 </div>
 <h1 style="color: black;"><b>Admin's Profile</b></h1>
-<div class="row">
-    <div class="main">
-        <div class="card">
+
            
 <form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
     <div class="container">
-
-   
-	
     
     <div>
     
         <button type="submit" [disabled]="regform.invalid">Add Retailer</button>
   </div>
-  <div>
     
-    <button type="submit" [disabled]="regform.invalid">View Retailer</button>
-</div>
-  
-	
     </div>
+ 
+</form>   
+
+<table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>ContactNo</th>
+            <th>Address</th>
+            <th>country</th>
+            <th>state</th>
+             <th>City</th>
+             <th>Postal Code</th>
+               <th>Email</th>
+               <th>Password</th>
+        </tr>
+        <tr *ngFor="let item of rellist">
+            <td>{{item.Retailer_ID}}</td>
+            <td>{{item.Retailer_Name}}</td>
+            <td>{{item.Retailer_ContactNo}}</td>
+            <td>{{item.Retailer_Address}}</td>
+            <td>{{item.Retailer_Country}}</td>
+            <td>{{item.Retailer_State}}</td>
+            <td>{{item.Retailer_City}}</td>
+              <td>{{item.Retailer_PostalCode}}</td>
+               <td>{{item.Retailer_Email}}</td>
+                <td>{{item.Retailer_Password}}</td>
+            <td><button (click)="delete(item.Retailer_ID)">delete </button></td>
+        </tr>
+    </table>
+	
+    
 
 	
 	
-</form>
 
-</div>
-</div>
-</div>
+
+
+
