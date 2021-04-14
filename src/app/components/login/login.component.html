@@ -12,41 +12,11 @@
 </div>
 
 
-<body>
-
-
-    <form>
-        <div class="=input">
-            <label>Username</label>
-            <input type="text" name="username" [(ngModel)]="model.username">
-        </div>
-        <div class="input">
-            <label>Password</label>
-            <input type="password" name="password" [(ngModel)]="model.password">
-        </div>
-        <div>
-    
-                    <button type="submit" [disabled]="loginform.invalid">Login</button>
-              </div>
-             <div>
-                      Forgot Password ? <a href=""><b> Reset Here</b></a>
-                  </div>
-    </form>
-    
-    
-</body>
-</html>
-
-<div style="background-color:black;">
-    
-        <h1>QuickMart</h1>
-      
-    </div>
     <div class="row">
         <div class="main">
             <div class="card">
                
-    <form #loginform="ngForm" name="loginform" (ngSubmit)="LoginData(loginform)">
+    <form #LoginForm="ngForm" name="LoginForm" (ngSubmit)="Login(LoginForm)">
         <div class="container">
     
         <div>
@@ -57,13 +27,13 @@
         
         <div>
             <label for="psw"><b>Password</b></label>
-            <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" required>
-            <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
+            <input type="password" name="pwd" [(ngModel)]="model.pwd" placeholder="Enter Password" #pwd="ngModel" required>
+            <span *ngIf="pwd.errors?.required">Password cannot be blank</span>
     </div>   
     
         <div>
         
-            <button type="submit" [disabled]="loginform.invalid">Login</button>
+            <button type="submit" [disabled]="LoginForm.invalid">Login</button>
       </div>
       <div>
           Forgot Password ? <a href=""><b> Reset Here</b></a>
@@ -78,3 +48,4 @@
     </div>
     </div>
     </div>
+
