@@ -10,7 +10,7 @@ import { HttpHeaders} from '@angular/common/http';
 export class AdminInfoServiceService {
   rel:AdminInfoModuleModule;
   http:HttpClient;
-  url:string='http://localhost:56803/api/User';
+  url:string='http://localhost:57646/api/UserApi';
   httpOptions={headers: new HttpHeaders ({
     'content-Type':'application/Json'
 

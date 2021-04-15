@@ -5,6 +5,7 @@ import { HeaderComponent } from './corecomponents/header/header.component';
 
 
 
+
 @NgModule({
  // declarations: [FooterComponent, HeaderComponent],
   imports: [

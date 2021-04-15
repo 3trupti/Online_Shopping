@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import {FormsModule,NgForm,FormGroup} from '@angular/forms';
+import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { AdminInfoModuleModule } from '../Modules/admin-info-module/admin-info-module.module';
 import { AdminInfoServiceService } from '../services/admin-info-service.service';
@@ -14,14 +15,32 @@ export class AdminProfileComponent implements OnInit {
   model:any=[];
   svc: AdminInfoServiceService;
   rellist: AdminInfoModuleModule [];
-  constructor(svc:AdminInfoServiceService) {this.svc=svc; }
+  ngzone: NgZone;
+  router: Router;
+  constructor(svc:AdminInfoServiceService,ngzone:NgZone, router:Router) {
+    this.svc=svc;
+    this.ngzone=ngzone;
+    this.router=router;
+   }
 
   ngOnInit(): void {
+    {if(localStorage.getItem("Email")=="Admin1234@gmail.com"){
     this.svc.GetRetailors().subscribe((data:AdminInfoModuleModule[])=>{
       this.rellist=data;
       console.log(this.rellist);
-    });
+    })}
+    else{
+      alert("You are Not Authorized to use this page");
+      this.ngzone.run(()=>this.router.navigateByUrl('/Login'));
+
+
+
+    }
+  };
+    
   }
+
+  
   RegisterData(regform:NgForm):void{
     console.log(regform.value);
   }
@@ -44,3 +63,4 @@ export class AdminProfileComponent implements OnInit {
 
 
 }
+

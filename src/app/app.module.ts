@@ -36,6 +36,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
+<<<<<<< HEAD
     HeaderComponent,
     FooterComponent,
     CartComponent,
@@ -47,11 +48,16 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminHomeComponent,
     RetailerHomeComponent,
     CustomerHomeComponent,
+=======
+>>>>>>> 5cd574e814bb8f5f8cd2ea250c6cd3091b647daf
     ForgotPasswordComponent,
-    HeaderComponent,
     FooterComponent,
+<<<<<<< HEAD
     CartComponent,
    
+=======
+    HeaderComponent,
+>>>>>>> 5cd574e814bb8f5f8cd2ea250c6cd3091b647daf
     
    
   ],
@@ -62,7 +68,12 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+<<<<<<< HEAD
     CoreModule
+=======
+    CoreModule,
+
+>>>>>>> 5cd574e814bb8f5f8cd2ea250c6cd3091b647daf
     
   ],
   providers: [],

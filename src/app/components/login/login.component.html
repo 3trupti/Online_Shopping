@@ -8,7 +8,6 @@
 </head>
 <div style="background-color:blue;">
     
-    <h1>QuickShop</h1>
 </div>
 
 
@@ -20,9 +19,9 @@
         <div class="container">
     
         <div>
-            <label for="uname"><b>UserName :</b></label>
-            <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
-            <span *ngIf="name.errors?.required">Name has to be entered</span>
+            <label for="Email"><b>Email_Id :</b></label>
+            <input type="email" name="txtemail" [(ngModel)]="model.txtemail" placeholder="Enter Email_Id" #txtemail="ngModel" required>
+            <span *ngIf="txtemail.errors?.required">Please enter Email ID</span>
         </div>
         
         <div>
