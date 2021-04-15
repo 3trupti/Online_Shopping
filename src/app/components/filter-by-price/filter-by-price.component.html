@@ -1,0 +1,59 @@
+<h1 style="color: black;"><b>Filter By Price</b></h1>
+
+           
+<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
+    <div class="container">
+
+        <div>
+            <br>
+            <label for="bname"><b>Price</b></label>
+            <select name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
+                <option value="1500">Less than 1500</option>
+                <option value="3000">Less than 3000</option>
+                <option value="5000">Less than 5000</option>
+                <option value="7000">Less than 8000</option>
+                <option value="100000">8000+</option>
+            </select><br>
+            <br>
+            <span *ngIf="bname.errors?.required">Type must be selected.</span>
+              
+        </div>
+      
+       
+        <br>
+        <button bname="submit" [disabled]="regform.invalid">Filter</button>
+    </div>
+
+        
+    
+</form>
+<div class="container">
+    <h3 style="color: blue;">Products</h3>
+<table border="1">
+
+    <tr>
+        <th>ProductID</th>
+        <th>BrandName</th>
+        <th>Image</th>
+        <th>Description</th>
+        <th>CategoryID</th>
+        <th>RetailerID</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let item of prodlist">
+        
+            <td>{{item.Product_Id}}</td>
+            <td>{{item.Product_BrandName}}</td>
+          <!---- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-->
+
+            <td><img src ="../../../assets/images/{{item.Product_Image}}" alt="" border =3 height =100 width=100 ></td>
+            <td>{{item.Product_Description}}</td>
+            <td>{{item.Category_Id}}</td>
+            <td>{{item.Retailer_ID}}</td>
+            <td>{{item.Product_Price}}</td>
+            <td>{{item.Product_Quantity}}</td>
+          
+            <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
+
+    </tr>

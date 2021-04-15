@@ -24,6 +24,9 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
+import { GetProductByCateoryComponent } from './components/get-product-by-cateory/get-product-by-cateory.component';
+import { FilterByBrandNameComponent } from './components/filter-by-brand-name/filter-by-brand-name.component';
+import { FilterByPriceComponent } from './components/filter-by-price/filter-by-price.component';
 
 
 
@@ -36,7 +39,6 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
-<<<<<<< HEAD
     HeaderComponent,
     FooterComponent,
     CartComponent,
@@ -48,16 +50,17 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminHomeComponent,
     RetailerHomeComponent,
     CustomerHomeComponent,
-=======
->>>>>>> 5cd574e814bb8f5f8cd2ea250c6cd3091b647daf
     ForgotPasswordComponent,
     FooterComponent,
-<<<<<<< HEAD
     CartComponent,
    
-=======
     HeaderComponent,
->>>>>>> 5cd574e814bb8f5f8cd2ea250c6cd3091b647daf
+   
+    GetProductByCateoryComponent,
+   
+    FilterByBrandNameComponent,
+   
+    FilterByPriceComponent,
     
    
   ],
@@ -68,12 +71,9 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-<<<<<<< HEAD
-    CoreModule
-=======
     CoreModule,
+    
 
->>>>>>> 5cd574e814bb8f5f8cd2ea250c6cd3091b647daf
     
   ],
   providers: [],

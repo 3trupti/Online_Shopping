@@ -34,6 +34,19 @@ GetProductInfo():Observable<ProductInfoModule[]>
 GetProductById(id:number):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByRetailerID'+'/'+id);
 }
+
+GetProductByCategory(cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByCategoryName'+'/'+cname);
+}
+
+FilterByBrandName(bname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductBrandName'+'/'+bname);
+}
+
+FilterByPrice(price:number):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductPrice'+'/'+price);
+}
+
 /*UpdateProduct(id:number,prod:ProductInfoModule):Observable<boolean>{
   return this.http.put<boolean>(this.url +"/UpdateProduct/",id,this.httpOptions);
 }*/
