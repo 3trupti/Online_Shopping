@@ -11,6 +11,9 @@ import{ CustomerHomeComponent } from './components/customer-home/customer-home.c
 import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
 import {GetProductByRetailerIDComponent} from './components/get-product-by-retailer-id/get-product-by-retailer-id.component';
 
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { AddRetailerComponent } from './add-retailer/add-retailer.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
  
 
 const routes: Routes= [
@@ -24,8 +27,12 @@ const routes: Routes= [
   {path: 'CustomerHome',component:CustomerHomeComponent},
   {path: 'RetailerHome',component:RetailerHomeComponent},
   {path: 'AdminHome',component:AdminHomeComponent},
-  {path:'Retailer_View',component:GetProductByRetailerIDComponent}
+  {path:'Retailer_View',component:GetProductByRetailerIDComponent},
 
+  {path : 'AddRetailer',component:AddRetailerComponent},
+  {path: 'AdminHome',component:AdminHomeComponent},
+  {path:  'ForgotPassword', component:ForgotPasswordComponent},
+  {path: 'AddProduct',component:AddProductComponent}
 
 
 

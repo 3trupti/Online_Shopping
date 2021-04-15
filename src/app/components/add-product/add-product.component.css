@@ -1,35 +1,35 @@
 *{
     box-sizing: border-box;
     font-family: 'Muli', 'Baloo Da 2', 'Montserrat', sans-serif;
-}
-body{
+  }
+  body{
     font-family: Arial;
     padding: 10px;
     background: #f1f1f1;
     /* background: rgb(241,241,242); */
-
-}
-
-.header{
+  
+  }
+  
+  .header{
     padding: 10px;
     text-align: center;
     background: white;
     width: 80%;
     margin: auto;
-}
-
-/* Style the top navigation bar */
-.topnav {
+  }
+  
+  /* Style the top navigation bar */
+  .topnav {
     overflow: hidden; 
     background-color: darkblue;
     width: 80%;
     margin: auto;
   }
- 
+  
   .topnav ul {
     list-style-type: none;
   }
- 
+  
   /* Style the topnav links */
   .topnav a {
     float: left;
@@ -44,34 +44,36 @@ body{
     width: 80%;
     margin: auto;
   }
- 
+  
   /* Add a card effect for articles */
   .card {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
     overflow: hidden;
+    width:600px;
+    
   }
- 
+  
   /* Clear floats after the columns */
   /* .row:after {
     content: "";
     display: table;
     clear: both;
   } */
-
+  
   .cc {
     float: left;
     padding: 5px;
   }
-
+  
   img{
       width: auto;
       max-width: 192px;
       height: auto;
      
   }
-
+  
   .row:after {
     content: "";
     display: table;
@@ -85,7 +87,7 @@ body{
     width: 80%;
     margin: auto;
   }
-
+  
   .container {
     padding: 16px;
     width: 350px;
@@ -100,7 +102,7 @@ body{
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-
+  
   /* Set a style for all buttons */
   button {
     background-color: black;
@@ -111,7 +113,7 @@ body{
     cursor: pointer;
     width: 100%;
   }
-
+  
   .cancelbtn {
     width: auto;
     padding: 10px 18px;
@@ -124,9 +126,7 @@ body{
   button:hover {
     opacity: 0.8;
   }
-  h1{
-    color: white;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
+  
+  
+  
+  
