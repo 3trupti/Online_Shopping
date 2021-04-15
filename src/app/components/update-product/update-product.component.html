@@ -30,7 +30,7 @@
     <div>
         <label>Enter Category</label>
         <input type="text" name="desc" [(ngModel)]="model.desc" #desc="ngModel" required>
-       <!----<select type="text" name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
+       <select type="text" name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
             <option *ngFor="let item of clist" [value]="item.Category_ID">{{item.Category_Name}}</option>
         </select>
         

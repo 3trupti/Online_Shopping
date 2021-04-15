@@ -41,4 +41,13 @@ export class UserInfoModule {
   Admin_Email :string;
   Admin_Contact :string;
   Admin_Password :string;
+
+  Product_Id :number;
+  Product_BrandName:string;
+  Product_Image:string;
+  Product_Description :string;
+  Category_ID: string;
+  //Retailer_ID:number;
+  Product_Price:number;
+  Product_Ouantity :number;
 }

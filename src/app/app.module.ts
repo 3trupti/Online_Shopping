@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{ HomePageComponent } from './components/home-page/home-page.component';
@@ -10,7 +11,7 @@ import{ LoginComponent } from './components/login/login.component';
 import{HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AddRetailerComponent } from './add-retailer/add-retailer.component';
-import { AddProductComponent } from './add-product/add-product.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import{CoreModule} from './core/core.module';
 import{HeaderComponent} from './core/corecomponents/header/header.component';
@@ -40,13 +41,15 @@ import { FilterByPriceComponent } from './components/filter-by-price/filter-by-p
     RegisterComponent,
     LoginComponent,
     HeaderComponent,
+    ForgotPasswordComponent,
     FooterComponent,
     CartComponent,
-    ForgotPasswordComponent,
+    HeaderComponent,
     RetailerProfileComponent,
     GetAllProductComponent,
     GetProductByRetailerIDComponent,
     UpdateProductComponent,
+    AdminProfileComponent,
     AdminHomeComponent,
     RetailerHomeComponent,
     CustomerHomeComponent,
@@ -61,6 +64,8 @@ import { FilterByPriceComponent } from './components/filter-by-price/filter-by-p
     FilterByBrandNameComponent,
    
     FilterByPriceComponent,
+    CustomerHomeComponent
+
     
    
   ],
@@ -73,6 +78,11 @@ import { FilterByPriceComponent } from './components/filter-by-price/filter-by-p
     RouterModule,
     CoreModule,
     
+
+    CoreModule
+
+   
+
 
     
   ],
