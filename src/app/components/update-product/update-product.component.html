@@ -1,12 +1,12 @@
-
-<!------
-<div style="background-color:black;">
-    
-    <h1>QuickShop</h1>
-  
-</div>
+<!-----
+<div class="container">
 <h1 style="color: black;"><b>Add Product</b></h1>
-<form #AddForm="ngForm" name="#AddForm" (ngSubmit)="AddProducts(AddForm)">
+<form #AddForm="ngForm" name="#AddForm" (ngSubmit)="UpdateProducts(AddForm)">
+    <div>
+        <label>Product ID</label>
+        <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" readonly>
+        <span *ngIf="id.errors?.required">ID has to be entered</span>
+    </div>
 
 
     <div>
@@ -29,17 +29,14 @@
   
     <div>
         <label>Enter Category</label>
-        <select type="text" name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
+        <input type="text" name="desc" [(ngModel)]="model.desc" #desc="ngModel" required>
+       <!----<select type="text" name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
             <option *ngFor="let item of clist" [value]="item.Category_ID">{{item.Category_Name}}</option>
         </select>
         
     </div>
     
-    <div>
-        <label>Your ID</label>
-        <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" required>
-        <span *ngIf="id.errors?.required">ID has to be entered</span>
-    </div>
+    
       
     <div>
         <label>Price</label>
@@ -54,6 +51,8 @@
 
     
     <div>
-        <button type="submit" >Add Product</button>
+        <button type="submit" >Update</button>
     </div>
-</form>--->
+</form>
+</div>
+-->

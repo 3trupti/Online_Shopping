@@ -17,6 +17,10 @@ import{HeaderComponent} from './core/corecomponents/header/header.component';
 import{FooterComponent} from './core/corecomponents/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import {ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { RetailerProfileComponent } from './components/retailer-profile/retailer-profile.component';
+import { GetAllProductComponent } from './components/get-all-product/get-all-product.component';
+import { GetProductByRetailerIDComponent } from './components/get-product-by-retailer-id/get-product-by-retailer-id.component';
+import { UpdateProductComponent } from './components/update-product/update-product.component';
 
 
 @NgModule({
@@ -28,13 +32,14 @@ import {ForgotPasswordComponent } from './components/forgot-password/forgot-pass
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
-<<<<<<< HEAD
     HeaderComponent,
     FooterComponent,
-    CartComponent
-=======
-    ForgotPasswordComponent
->>>>>>> 9c6d27e9dcd9dca5ac98b23fc94b28642244c0d1
+    CartComponent,
+    ForgotPasswordComponent,
+    RetailerProfileComponent,
+    GetAllProductComponent,
+    GetProductByRetailerIDComponent,
+    UpdateProductComponent
    
   ],
   imports: [
