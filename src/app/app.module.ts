@@ -18,6 +18,10 @@ import{HeaderComponent} from './core/corecomponents/header/header.component';
 import{FooterComponent} from './core/corecomponents/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import {ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { RetailerProfileComponent } from './components/retailer-profile/retailer-profile.component';
+import { GetAllProductComponent } from './components/get-all-product/get-all-product.component';
+import { GetProductByRetailerIDComponent } from './components/get-product-by-retailer-id/get-product-by-retailer-id.component';
+import { UpdateProductComponent } from './components/update-product/update-product.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
@@ -33,15 +37,19 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     AdminProfileComponent,
     RegisterComponent,
     LoginComponent,
+    ForgotPasswordComponent,
+    FooterComponent,
+    CartComponent,
+    HeaderComponent,
+    RetailerProfileComponent,
+    GetAllProductComponent,
+    GetProductByRetailerIDComponent,
+    UpdateProductComponent,
+    AdminProfileComponent,
     AdminHomeComponent,
     RetailerHomeComponent,
-    CustomerHomeComponent,
-    ForgotPasswordComponent,
-    HeaderComponent,
-    FooterComponent,
-    CartComponent
+    CustomerHomeComponent
 
-    
     
    
   ],
@@ -53,6 +61,10 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     HttpClientModule,
     RouterModule,
     CoreModule
+
+   
+
+
     
   ],
   providers: [],

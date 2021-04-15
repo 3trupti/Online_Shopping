@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class UserInfoModule { 
   
-  Customer_ID :string;
+  Customer_ID :number;
   Customer_Name :string;
   Customer_ContactNo :string;
   Customer_Address :string;
@@ -24,7 +24,7 @@ export class UserInfoModule {
   Customer_Type :string;
 
 
-  Retailer_ID :string;
+  Retailer_ID :number;
   Retailer_Name: string;
   Retailer_ContactNo : string;
   Retailer_Address : string;
@@ -36,7 +36,7 @@ export class UserInfoModule {
   Retailer_Password : string;
 
 
-  Admin_ID:string;
+  Admin_ID:number;
   Admin_Name :string;
   Admin_Email :string;
   Admin_Contact :string;

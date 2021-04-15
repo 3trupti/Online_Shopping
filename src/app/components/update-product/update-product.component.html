@@ -1,0 +1,58 @@
+<!-----
+<div class="container">
+<h1 style="color: black;"><b>Add Product</b></h1>
+<form #AddForm="ngForm" name="#AddForm" (ngSubmit)="UpdateProducts(AddForm)">
+    <div>
+        <label>Product ID</label>
+        <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" readonly>
+        <span *ngIf="id.errors?.required">ID has to be entered</span>
+    </div>
+
+
+    <div>
+        <label>Brand Name</label>
+        <input type="text" name="brand" [(ngModel)]="model.brand" #brand="ngModel" required>
+        <span *ngIf="brand.errors?.required">Brand name  has to be entered</span>
+    </div>
+
+    <div>
+        <label>Product Image</label>
+        <input type="file" name="img" [(ngModel)]="model.img" #img="ngModel" required>
+        <span *ngIf="img.errors?.required">Image has to be entered</span>
+    </div>
+
+    <div>
+        <label>Product Description</label>
+        <input type="text" name="desc" [(ngModel)]="model.desc" #desc="ngModel" required>
+        <span *ngIf="desc.errors?.required">Description has to be entered</span>
+    </div>
+  
+    <div>
+        <label>Enter Category</label>
+        <input type="text" name="desc" [(ngModel)]="model.desc" #desc="ngModel" required>
+       <select type="text" name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
+            <option *ngFor="let item of clist" [value]="item.Category_ID">{{item.Category_Name}}</option>
+        </select>
+        
+    </div>
+    
+    
+      
+    <div>
+        <label>Price</label>
+        <input type="number" name="price" [(ngModel)]="model.price" #price="ngModel" required>
+        <span *ngIf="price.errors?.required">Price has to be entered</span>
+    </div>
+    <div>
+        <label>Quantity</label>
+        <input type="number" name="quan" [(ngModel)]="model.quan" #quan="ngModel" required>
+        <span *ngIf="quan.errors?.required">Quantity has to be entered</span>
+    </div>
+
+    
+    <div>
+        <button type="submit" >Update</button>
+    </div>
+</form>
+</div>
+-->

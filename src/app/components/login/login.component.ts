@@ -14,7 +14,7 @@ import {UserInfoModule} from 'src/app/modules/user-info/user-info.module';
 })
 export class LoginComponent implements OnInit {
   svc:UserInfoService;
-  name:string;
+  email:string;
   pwd:string;
   role:string;
   model:any=[];
@@ -28,18 +28,25 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.clear();
   }
 
   Login(LoginForm:NgForm):void{
-    this.name =LoginForm.value.name;
+    this.email =LoginForm.value.txtemail;
     this.pwd=LoginForm.value.pwd;
 
-    this.svc.Login(this.name,this.pwd).subscribe((data:string)=> {
+    this.svc.Login(this.email,this.pwd).subscribe((data:string)=> {
     console.log(data);
     if(data=="Customer")
     {
       alert('Customer Login Successful');
+      localStorage.setItem('Email',this.email);
+      localStorage.setItem('TType',"Customer")
+
       this.ngzone.run(()=>this.router.navigateByUrl('/CustomerHome'));
+
+      
+
       
         
     }
@@ -47,12 +54,19 @@ export class LoginComponent implements OnInit {
     else if(data=="Retailer")
     {
       alert('Retailer Login Successful');
+      localStorage.setItem('Email',this.email);
+      localStorage.setItem('TType',"Retailer")
+
+      
       this.ngzone.run(()=>this.router.navigateByUrl('/RetailerHome'));
+      
     }
 
     else if(data=="Admin")
     {
       alert('Admin Login Successful');
+      localStorage.setItem('Email',this.email);
+
       this.ngzone.run(()=>this.router.navigateByUrl('/AdminHome'));
     }
 

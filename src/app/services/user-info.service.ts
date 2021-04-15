@@ -32,9 +32,9 @@ export class UserInfoService {
     return this.http.post<boolean>(this.url + "/" + "InsertCustomer1", User, this.httpOptions);
   }
 
-  Login(name:string, pwd:string):Observable<string>
+  Login(email:string, pwd:string):Observable<string>
   {
-    return this.http.get<string>(this.url+'/'+'Login'+'/'+ name +'/'+ pwd);
+    return this.http.get<string>(this.url+'/'+'Login'+'/'+ email +'/'+ pwd);
   }
 
   InsertNewProduct(prod: UserInfoModule) : Observable<boolean>
