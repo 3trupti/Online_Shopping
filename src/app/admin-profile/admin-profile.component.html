@@ -1,20 +1,15 @@
-<div style="background-color:black;">
     
-    <h1>QuickShop</h1>
   
-</div>
+
 <h1 style="color: black;"><b>Admin's Profile</b></h1>
 
            
 <form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
-    <div class="container">
     
     <div>
     
         <button type="submit" [disabled]="regform.invalid">Add Retailer</button>
   </div>
-    
-    </div>
  
 </form>   
 
@@ -41,7 +36,7 @@
             <td>{{item.Retailer_City}}</td>
               <td>{{item.Retailer_PostalCode}}</td>
                <td>{{item.Retailer_Email}}</td>
-                <td>{{item.Retailer_Password}}</td>
+                <!--<td>{{item.Retailer_Password}}</td>-->
             <td><button (click)="delete(item.Retailer_ID)">delete </button></td>
         </tr>
     </table>
