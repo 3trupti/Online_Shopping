@@ -9,16 +9,15 @@
 <div style="background-color:blue;">
     
     <h1>QuickShop</h1>
-</div>
+
 
 
     <div class="row">
         <div class="main">
             <div class="card">
                
-    <form #LoginForm="ngForm" name="LoginForm" (ngSubmit)="Login(LoginForm)">
-        <div class="container">
-    
+    <form #LoginForm="ngForm" name="LoginForm" (ngSubmit)="Login(LoginForm)">     
+      
         <div>
             <label for="uname"><b>UserName :</b></label>
             <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
@@ -39,11 +38,12 @@
           Forgot Password ? <a href=""><b> Reset Here</b></a>
       </div>
         
-        </div>
-    
+       
         
         
     </form>
+ </div>
+    
     
     </div>
     </div>

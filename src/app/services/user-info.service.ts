@@ -36,6 +36,13 @@ export class UserInfoService {
   {
     return this.http.get<string>(this.url+'/'+'Login'+'/'+ name +'/'+ pwd);
   }
+
+  InsertNewProduct(prod: UserInfoModule) : Observable<boolean>
+  {
+    const endpoint="http://localhost:57646/api/User/AddProduct";
+    console.log("insideservice");
+    return this.http.post<boolean>(endpoint,prod,this.httpOptions);
+  }
   
  
 

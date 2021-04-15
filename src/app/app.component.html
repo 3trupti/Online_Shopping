@@ -1,43 +1,15 @@
-<div>
-  <app-register></app-register>
-</div>
-<div>
-  <app-login></app-login>
-</div>
 
 
-<!--
-<router-outlet>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-primary pl-5 fixed-top">
-    <a routerLink ="Home" class="navbar-brand text-white" >QuickShop</a>
-    <span class="navbar-text text-white">Best Deals Here</span>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="myMenu">
-      <ul class="navbar-nav pl-5 custom-nav">
-        <li class="nav-item"><a routerLink="Home" class="nav-link text-white">Home</a></li>
-        <li class="nav-item"><a routerLink="#Categories" class="nav-link text-white">Categories</a></li>
-        <li class="nav-item"><a routerLink="#Compare" class="nav-link text-white">Compare</a></li>
-        <li class="nav-item"><a routerLink="#Cart" class="nav-link text-white">Cart</a></li>
-        <li class="nav-item"><a routerLink="Login" class="nav-link text-white">Login</a></li>
-        <li class="nav-item"><a routerLink="Register" class="nav-link text-white">Signup</a></li>
-      </ul>
-    </div>
-  </nav> -->
-  <!-- End Navigation -->
 
- <!----<ul>
-    <li><a routerLink = "Home">Home</a></li>
-    <li><a routerLink = "Register">Register</a></li>
-     <li><a routerLink = "Login">User Login</a></li>
-    <li><a routerLink = "CustomerHome">Customer Home Page</a></li>
-    <li><a routerLink = "RetailerHome">Retailer Home Page</a></li>
-    <li><a routerLink = "AdminHome">Admin Home Page</a></li>
+<app-header></app-header>
+<div class="bg">
+    <router-outlet></router-outlet>
+
+
+<div style="padding: 50px;"><a href="AddProduct">Add Product</a></div>
+
+ 
     
-  </ul>
+</div>
 
-  
-  
-</router-outlet>
--->
+<app-footer></app-footer>
