@@ -13,7 +13,7 @@ import { ProductInfoModule } from '../modules/product-info/product-info.module';
 export class RetailerService {
   rel:RetailerInfoModule;
   http:HttpClient;
-  url:string='http://localhost:51110/api/User';
+  url:string='http://localhost:57646/api/User';
   httpOptions={header:new HttpHeaders({
     'Content-Type': 'application/json'
   })

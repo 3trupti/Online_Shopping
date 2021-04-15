@@ -9,17 +9,17 @@
 <form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
     <div class="container">
       
-       <div>Retailer ID</div>
-        <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" required><br><br>
-        <span *ngIf="id.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
+       <!--<div>Retailer email</div>
+        <input type="text" name="email" [(ngModel)]="model.email" #email="ngModel" required><br><br>
+        <span *ngIf="email.errors?.required" style="color: red;">Retailer Email cannot be blank</span>
         <div>
         <br>
         <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>
-
-        <!---<div>
-            <button type="submit" [disabled]="regform.invalid">View Product</button>
         </div>-->
+
+        <div>
+            <button type="submit" [disabled]="regform.invalid">View Product</button>
+        </div>
     </div>
 </form>
 <div class="container">

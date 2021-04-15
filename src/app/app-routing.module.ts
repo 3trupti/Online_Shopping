@@ -9,6 +9,7 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import{ AdminHomeComponent } from './components/admin-home/admin-home.component'
 import{ CustomerHomeComponent } from './components/customer-home/customer-home.component';
 import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
+import {GetProductByRetailerIDComponent} from './components/get-product-by-retailer-id/get-product-by-retailer-id.component';
 
  
 
@@ -22,7 +23,8 @@ const routes: Routes= [
 
   {path: 'CustomerHome',component:CustomerHomeComponent},
   {path: 'RetailerHome',component:RetailerHomeComponent},
-  {path: 'AdminHome',component:AdminHomeComponent}
+  {path: 'AdminHome',component:AdminHomeComponent},
+  {path:'Retailer_View',component:GetProductByRetailerIDComponent}
 
 
 

@@ -24,6 +24,7 @@ export class GetProductByRetailerIDComponent implements OnInit {
    svc: ProductService;
    ngzone:NgZone;
    router:Router;
+   store:string;
   prodlist: ProductInfoModule[];
   prod=new ProductInfoModule();
   
@@ -36,6 +37,7 @@ export class GetProductByRetailerIDComponent implements OnInit {
   }
 
   ngOnInit(): void {
+   
   
     /*this.svc.GetProductById(this.prod.Retailer_ID).subscribe(data:ProductInfoModule)=>
     {
@@ -45,8 +47,10 @@ export class GetProductByRetailerIDComponent implements OnInit {
   }
 
  Product(regform:NgForm):void{
-    this.prod.Retailer_ID=regform.value.id;
-    this.svc.GetProductById(this.prod.Retailer_ID).subscribe((data:ProductInfoModule[])=>
+   // this.prod.Retailer_Email=regform.value.email;
+    this.store=localStorage.getItem('Email')
+    alert("store is" + this.store);
+    this.svc.GetProductById(this.store).subscribe((data:ProductInfoModule[])=>
           {
             this.prodlist=data;
             console.log(this.prodlist);

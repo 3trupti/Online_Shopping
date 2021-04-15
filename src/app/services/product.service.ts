@@ -13,7 +13,7 @@ import {ProductInfoModule} from '../modules/product-info/product-info.module';
 export class ProductService {
   prod:ProductInfoModule;
   http:HttpClient;
-  url:string='http://localhost:51110/api/User';
+  url:string='http://localhost:57646/api/User';
   httpOptions={Headers:new HttpHeaders({
     'Content-Type': 'application/json'
   })
@@ -31,8 +31,8 @@ GetProductInfo():Observable<ProductInfoModule[]>
 {
   return this.http.get<ProductInfoModule[]>(this.url+'/'+'GetAllProducts');
 }
-GetProductById(id:number):Observable<ProductInfoModule[]>{
-  return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByRetailerID'+'/'+id);
+GetProductById(email:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByRetailerID'+'/'+ email+"/");
 }
 /*UpdateProduct(id:number,prod:ProductInfoModule):Observable<boolean>{
   return this.http.put<boolean>(this.url +"/UpdateProduct/",id,this.httpOptions);

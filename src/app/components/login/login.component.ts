@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   email:string;
   pwd:string;
   role:string;
+  id:number;
+  
   model:any=[];
   ngzone: NgZone;
   router: Router;
@@ -32,6 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   Login(LoginForm:NgForm):void{
+    
     this.email =LoginForm.value.txtemail;
     this.pwd=LoginForm.value.pwd;
 
@@ -58,7 +61,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('TType',"Retailer")
 
       
-      this.ngzone.run(()=>this.router.navigateByUrl('/RetailerHome'));
+      this.ngzone.run(()=>this.router.navigateByUrl('/Retailer_View'));
       
     }
 
