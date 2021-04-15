@@ -21,6 +21,10 @@ import { RetailerProfileComponent } from './components/retailer-profile/retailer
 import { GetAllProductComponent } from './components/get-all-product/get-all-product.component';
 import { GetProductByRetailerIDComponent } from './components/get-product-by-retailer-id/get-product-by-retailer-id.component';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
+import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
+
 
 
 @NgModule({
@@ -39,7 +43,16 @@ import { UpdateProductComponent } from './components/update-product/update-produ
     RetailerProfileComponent,
     GetAllProductComponent,
     GetProductByRetailerIDComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    AdminHomeComponent,
+    RetailerHomeComponent,
+    CustomerHomeComponent,
+    ForgotPasswordComponent,
+    HeaderComponent,
+    FooterComponent,
+    CartComponent,
+   
+    
    
   ],
   imports: [
@@ -50,6 +63,7 @@ import { UpdateProductComponent } from './components/update-product/update-produ
     HttpClientModule,
     RouterModule,
     CoreModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

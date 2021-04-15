@@ -2,7 +2,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-forgot-password',
+  selector: 'app-login',
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.css']
 })
