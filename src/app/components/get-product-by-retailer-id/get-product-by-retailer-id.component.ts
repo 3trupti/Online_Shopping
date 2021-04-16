@@ -45,14 +45,20 @@ export class GetProductByRetailerIDComponent implements OnInit {
       console.log(this.prodlist);
     }*/
   }
+  AddProduct():void{
+    this.ngzone.run(()=>this.router.navigateByUrl('/AddProduct'));
+
+  }
 
  Product(regform:NgForm):void{
    // this.prod.Retailer_Email=regform.value.email;
     this.store=localStorage.getItem('Email')
-    alert("store is" + this.store);
     this.svc.GetProductById(this.store).subscribe((data:ProductInfoModule[])=>
           {
+            
             this.prodlist=data;
+            
+
             console.log(this.prodlist);
           
            /*this.BrandName= data.Product_BrandName;

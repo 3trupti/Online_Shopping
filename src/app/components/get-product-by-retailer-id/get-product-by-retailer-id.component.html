@@ -15,10 +15,14 @@
         <div>
         <br>
         <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>-->
+        </div>
 
+        <h1>Your Retailer_ID is {{prod.Retailer_ID}}</h1>-->
         <div>
             <button type="submit" [disabled]="regform.invalid">View Product</button>
+        </div>
+        <div>
+            <button type="submit" (click)="AddProduct()">Add Product</button>
         </div>
     </div>
 </form>

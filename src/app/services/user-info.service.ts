@@ -4,6 +4,7 @@ import {Observer} from 'rxjs';
 import {UserInfoModule} from '../modules/user-info/user-info.module';
 import{Observable} from 'rxjs/internal/observable';
 import {HttpHeaders} from '@angular/common/http';
+import { ProductinfoModule } from '../modules/productinfo/productinfo.module';
 
 
 @Injectable({
@@ -37,9 +38,10 @@ export class UserInfoService {
     return this.http.get<string>(this.url+'/'+'Login'+'/'+ email +'/'+ pwd);
   }
 
+  //InsertNewProduct(prod: UserInfoModule) : Observable<boolean>
   InsertNewProduct(prod: UserInfoModule) : Observable<boolean>
   {
-    const endpoint="http://localhost:57646/api/User/AddProduct";
+    const endpoint="http://localhost:57646/api/UserApi/AddProduct";
     console.log("insideservice");
     return this.http.post<boolean>(endpoint,prod,this.httpOptions);
   }

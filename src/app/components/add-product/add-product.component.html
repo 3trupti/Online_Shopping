@@ -4,7 +4,7 @@
     <div class="main">
         <div class="card"  >
 <h1>Add Product</h1>
-<form  #AddForm="ngForm" name="#AddForm" (ngSubmit)="AddProduct(AddForm)">
+<form  #AddForm="ngForm" name="#AddForm" (ngSubmit)="AddProducts(AddForm)">
 
 
     <div class="input-group mb-3">
@@ -39,15 +39,10 @@
         <select name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
             <option name="CAT1" value="CAT1">Electronics-Mobiles</option>
             <option name="CAT2" value="CAT2">Electronics-TV</option>
-            <option name="CAT3" value="CAT3">Electronics-TV</option>
-            <option name="CAT4" value="CAT4">Women;s Fashion-Ethnic Wear</option>
-            <option name="CAT5" value="CAT5">Women's Fashion-Jeans</option>
-            <option name="CAT6" value="CAT6">Women's Fashion-Tops</option>
-            <option name="CAT7" value="CAT7">Women's Fashion-Dresses</option>
-            <option name="CAT8" value="CAT8">Men's Fashion-Jeans</option>
-            <option name="CAT9" value="CAT9">Men's Fashion-T-Shirt</option>
-            <option name="CAT10" value="CAT10">Beauty-Perfumes</option>
-            <option name="CAT11" value="CAT11">Sports-Shoes</option>
+            <option name="CAT3" value="CAT3">Electronics-Laptop</option>
+            <option name="CAT4" value="CAT4">Women's-Fashion</option>
+            <option name="CAT5" value="CAT5">Men's-Fashion</option>
+           
         </select><br>
         
         <span *ngIf="cat.errors?.required">Type must be selected.</span>
