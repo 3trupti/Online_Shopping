@@ -34,6 +34,19 @@ GetProductInfo():Observable<ProductInfoModule[]>
 GetProductById(email:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByRetailerID'+'/'+ email+"/");
 }
+
+GetProductByCategory(cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByCategoryName'+'/'+cname);
+}
+
+FilterByBrandName(bname:string,cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductBrandName'+'/'+bname +"/" + cname);
+}
+
+FilterByPrice(price:number):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductPrice'+'/'+price);
+}
+
 /*UpdateProduct(id:number,prod:ProductInfoModule):Observable<boolean>{
   return this.http.put<boolean>(this.url +"/UpdateProduct/",id,this.httpOptions);
 }*/
@@ -44,6 +57,9 @@ DeleteProduct(id:number):Observable<boolean>{
   return this.http.delete<boolean>(this.url+'/'+'DeleteProduct'+'/'+id);
 }*/
 
+AddToCart(id:number,email:string):Observable<string>{
+  return this.http.post<string>(this.url+'/'+'AddToCart'+'/'+id+ "/" + email + "/" ,this.httpOptions);
+}
 }
 
 

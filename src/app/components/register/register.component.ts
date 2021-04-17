@@ -22,6 +22,8 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.setItem("reload","false");
+
   }
   RegisterData(regform:NgForm):void{
     console.log(regform.value);

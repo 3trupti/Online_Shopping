@@ -10,6 +10,11 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+    localStorage.setItem("reload","false");
+
+    
+
+
+}
 
 }

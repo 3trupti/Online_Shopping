@@ -25,6 +25,9 @@ import { UpdateProductComponent } from './components/update-product/update-produ
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { RetailerHomeComponent } from './components/retailer-home/retailer-home.component';
 import { CustomerHomeComponent } from './components/customer-home/customer-home.component';
+import { GetProductByCateoryComponent } from './components/get-product-by-cateory/get-product-by-cateory.component';
+import { FilterByBrandNameComponent } from './components/filter-by-brand-name/filter-by-brand-name.component';
+import { FilterByPriceComponent } from './components/filter-by-price/filter-by-price.component';
 
 
 
@@ -55,6 +58,12 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     CartComponent,
    
     HeaderComponent,
+   
+    GetProductByCateoryComponent,
+   
+    FilterByBrandNameComponent,
+   
+    FilterByPriceComponent,
     CustomerHomeComponent
 
     
@@ -68,6 +77,9 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
     HttpClientModule,
     RouterModule,
     CoreModule,
+
+    
+    
 
     
 

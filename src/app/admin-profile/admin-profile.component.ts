@@ -24,6 +24,8 @@ export class AdminProfileComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    localStorage.setItem("reload","false");
+
     {if(localStorage.getItem("Email")=="Admin1234@gmail.com"){
     this.svc.GetRetailors().subscribe((data:AdminInfoModuleModule[])=>{
       this.rellist=data;

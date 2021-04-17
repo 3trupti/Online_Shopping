@@ -15,7 +15,7 @@ export class CategoryService {
 
   cate:CategoryInfoModule;
   http: HttpClient;
-  url: string = 'http://localhost:51110/api/User';
+  url: string = 'http://localhost:57646/api/User';
   httpOptions = {headers: new HttpHeaders({
     'Content-Type': 'application/json'
   })

@@ -49,6 +49,8 @@ export class AddProductComponent implements OnInit {
    
 
   ngOnInit(): void {
+    localStorage.setItem("reload","false");
+
     if(localStorage.getItem("TType")=="Retailer"){}
     else{
       alert("You are Not a Authorized Retailer to view this page")

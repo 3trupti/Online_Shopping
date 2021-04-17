@@ -38,7 +38,14 @@ export class GetProductByRetailerIDComponent implements OnInit {
 
   ngOnInit(): void {
    
-  
+    localStorage.setItem("reload","false");
+
+    if(localStorage.getItem("TType")=="Retailer"){}
+    else{
+      alert("You are Not a Authorized Retailer to view this page")
+      this.ngzone.run(()=>this.router.navigateByUrl('/Login'));
+
+    }
     /*this.svc.GetProductById(this.prod.Retailer_ID).subscribe(data:ProductInfoModule)=>
     {
       this.prodlist=data;
