@@ -18,6 +18,8 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import {FilterByPriceComponent} from './components/filter-by-price/filter-by-price.component';
 import {FilterByBrandNameComponent} from './components/filter-by-brand-name/filter-by-brand-name.component';
 import {CartComponent} from './components/cart/cart.component';
+import { CompareProductsComponent } from './components/compare-products/compare-products.component';
+
  
 
 const routes: Routes= [
@@ -40,7 +42,8 @@ const routes: Routes= [
   {path: 'AddProduct',component:AddProductComponent},
   {path: 'Filter_Price',component:FilterByBrandNameComponent},
   {path: 'Filter_Brand',component:FilterByBrandNameComponent},
-  {path:'Cart', component:CartComponent}
+  {path:'Cart', component:CartComponent},
+  {path:'Compare',component:CompareProductsComponent},
 
 
 
