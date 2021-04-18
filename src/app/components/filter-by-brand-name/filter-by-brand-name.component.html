@@ -1,6 +1,68 @@
 
+<div style="background-color:black;">
+
+    <h1>QuickShop</h1>
+
+</div>
+<div class="container-fluid bg">
+
+    <H1><i><b><span class="badge badge-pill badge-warning badge-lg"><i>Choose from Your Favourite Brand.</i></span></b></i></H1>
+
+        <form #regform="ngForm" class="form-group" name="regform" (ngSubmit)="Product(regform)">
+            <div class="container">
+                <div>
+                    <br>
+                    <label for="cname"><b>Brand Name</b></label>
+                    <select style="height:50px ;width:150px;" name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
+                        <option style="height:50px ;width:150px; color: red;" value="Levis">Levis</option>
+                        <option style="height:50px ;width:150px; color: red;" value="VeroModa">Vero Moda</option>
+                        <option style="height:50px ;width:150px; color: red;" value="Roadster">Roaster</option>
+                        <option style="height:50px ;width:150px; color: red;" value="Samsung">Samsung</option>
+                        <option style="height:50px ;width:150px; color: red;" value="MI">MI</option>
+                    </select><br>
+                    <br>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success btn-lg" [disabled]="regform.invalid">FILTER</button>
+            </div>
+        </form>
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table table-dark ">
+            <h3><span class="badge badge-lg badge-danger badge-block ">Search Results</span></h3>
+            <tr>
+                <th>ProductID</th>
+                <th>BrandName</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>CategoryID</th>
+                <th>RetailerID</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+           
+            <tr *ngFor="let item of prodlist">
+            
+                <td>{{item.Product_Id}}</td>
+                <td>{{item.Product_BrandName}}</td>
+                <!--- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-->
+            
+                <td><img src="../../../assets/images/{{item.Product_Image}}" alt="" border=3 height=100 width=100></td>
+                <td>{{item.Product_Description}}</td>
+                <td>{{item.Category_Id}}</td>
+                <td>{{item.Retailer_ID}}</td>
+                <td>{{item.Product_Price}}</td>
+                <td>{{item.Product_Quantity}}</td>
+                <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
+                <td><span *ngIf="item.Product_Quantity==0" style="color: red;">OutofStock</span>
+                    <button class="btn btn-success" *ngIf="!item.Product_Quantity==0"
+                        (click)="AddToCart((item.Product_Id))">AddCart</button>
+                </td>
+            </tr>
+
   
-<h1 style="color: black;"><b>Filter By BrandName</b></h1>
+<!--<h1 style="color: black;"><b>Filter By BrandName</b></h1>
 
            
 <form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
@@ -48,7 +110,7 @@
         
             <td>{{item.Product_Id}}</td>
             <td>{{item.Product_BrandName}}</td>
-          <!---- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-->
+          <---- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-Onlythisline
 
             <td><img src ="../../../assets/images/{{item.Product_Image}}" alt="" border =3 height =100 width=100 ></td>
             <td>{{item.Product_Description}}</td>
@@ -60,7 +122,7 @@
             <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
 
     </tr>
-<!---<div>
+<!-<div>
             <button type="submit" [disabled]="regform.invalid">View Product</button>
             <div>Category Name</div>
         <input type="text" name="cname" [(ngModel)]="model.cname" #cname="ngModel" required><br><br>

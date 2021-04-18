@@ -2,7 +2,7 @@
     <div class="jumbotron bg">
         <div class="card">
             <div class="card-header">
-                <H2><i><b>Products</b></i></H2>
+                <H1 style="text-align: center;"><i><b><span class="badge badge-pill badge-lg badge-warning">Products</span></b></i></H1>
             </div>
             <div card="card-body">
                 <div class="table-responsive">
@@ -18,22 +18,10 @@
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
                         </tr>
-                        <tr>
-
-                            <td>1223</td>
-                            <td>veromoda</td>
-                            <td>fgfsaadcf</td>
-                            <td>fdjhjlllllllllllllllllllllllllllllllllllllllllllllllllklkdd</td>
-                            <td>3445</td>
-                            <td>2233</td>
-                            <td>4455</td>
-                            <td>2</td>
-                            <td><button class="btn btn-success">Edit</button></td>
-                            <td><button class="btn btn-danger">Delete</button></td>
-                        </tr>
+                      
                   
                         
-                        <!-- <tr *ngFor="let item of prodData">
+                        <tr *ngFor="let item of prodData">
 
                         
                         <td>{{item.Product_Id}}</td>
@@ -48,7 +36,7 @@
                         <td><button  class="btn btn-success" (click)="delete(item.Product_Id)">Edit</button></td>
                         <td><button class="btn btn-danger" (click)="delete(item.Product_Id)">Delete</button></td>
 
-                    </tr>-->
+                    </tr>
                   
 
                     </table>
