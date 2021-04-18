@@ -1,52 +1,51 @@
-
-<div>
-    
+<div class="bg">
+<!--Heading of the Page-->
+  <h1 style="text-align: center;"><span class="badge badge-pill badge-warning"><i>Admin Profile</i></span></h1>
   
-
-<h1 style="text-align: center;"><b><i>Admin Profile</i></b></h1>
-
-           
-<form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
-    
+<!-- Form for Button-->
+  <form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
     <div>
-        <button type="submit" class="btn btn-primary btn-block" [disabled]="regform.invalid">Add Retailer</button>
-  </div>
+      <h1 style="text-align: center;"> <button type="submit" class="btn btn-success" [disabled]="regform.invalid">Add Retailer</button></h1>
+    </div>
+  </form >
+
+  <!-- Display contents in table format-->
+  <div class="table-responsive">
+    <table class="table table-dark table-hover table-bordered">
+
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Contact Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Country</th>
+            <th scope="col">State</th>
+            <th scope="col">City</th>
+            <th scope="col">Postal Code</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+        </tr>
+        
+           <tr *ngFor="let item of rellist">
+
+                        
+                        <td>{{item.Retailer_ID}}</td>
+                        <td>{{item.Retailer_Name}}</td>
+                        <td>{{item.Retailer_ContactNo}}</td>
+                        <td>{{item.Retailer_Address}}</td>
+                        <td>{{item.Retailer_State}}</td>
+                        <td>{{item.Retailer_City}}</td>
+                        <td>{{item.Retailer_PostalCode}}</td>
+                        <td>{{item.Retailer_Email}}</td>
+                        <td>{{item.Retailer_Password}}</td>
+           
  
-</form>   
+                 
+                        <td><button class="btn btn-danger" (click)="delete(item.Product_Id)">Delete</button></td>
 
-<table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>ContactNo</th>
-            <th>Address</th>
-            <th>country</th>
-            <th>state</th>
-             <th>City</th>
-             <th>Postal Code</th>
-               <th>Email</th>
-               <th>Password</th>
-        </tr>
-        <tr *ngFor="let item of rellist">
-            <td>{{item.Retailer_ID}}</td>
-            <td>{{item.Retailer_Name}}</td>
-            <td>{{item.Retailer_ContactNo}}</td>
-            <td>{{item.Retailer_Address}}</td>
-            <td>{{item.Retailer_Country}}</td>
-            <td>{{item.Retailer_State}}</td>
-            <td>{{item.Retailer_City}}</td>
-              <td>{{item.Retailer_PostalCode}}</td>
-               <td>{{item.Retailer_Email}}</td>
-                <!--<td>{{item.Retailer_Password}}</td>-->
-            <td><button (click)="delete(item.Retailer_ID)">delete </button></td>
-        </tr>
+                    </tr>
+
+        
+
     </table>
-	
-    
-
-	
-	
-
-
-
-
+</div>
