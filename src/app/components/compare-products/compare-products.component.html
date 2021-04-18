@@ -1,66 +1,58 @@
 <div style="background-color:black;">
-    
+
     <h1>QuickShop</h1>
-  
+
 </div>
-<h1 style="color: black;"><b>Compare</b></h1>
+<div class="container-fluid bg">
 
-           
-<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
-    <div class="container">
-      
-       <!--<div>Category Name</div>
-        <input type="text" name="cname" [(ngModel)]="model.cname" #cname="ngModel" required><br><br>
-        <span *ngIf="cname.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
-        <div>-->
-            <div>
+    <H1><i><b><span class="badge badge-pill badge-warning badge-lg"><i>Confused ?? We are here to help
+                        you.</i></span></b></i></H1>
+
+        <form #regform="ngForm" class="form-group" name="regform" (ngSubmit)="Product(regform)">
+            <div class="container">
+                <div>
+                    <br>
+                    <label for="cname"><b>Category</b></label>
+                    <select style="height:50px ;width:150px;" name="cname" [(ngModel)]="model.cname" #cname="ngModel" required>
+                        <option style="height:50px ;width:150px; color: red;" value="Sports"><b>Sports</b></option>
+                        <option style="height:50px ;width:150px; color: red;" value="Electronics">Electronics</option>
+                        <option style="height:50px ;width:150px; color: red;" value="Men-Fashion">Men-Fashion</option>
+                    </select><br>
+                    <br>
+                </div>
                 <br>
-                <label for="cname"><b>Category</b></label>
-                <select name="cname" [(ngModel)]="model.cname" #cname="ngModel" required>
-                    <option value="Sports">Sports</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Men-Fashion">Men-Fashion</option>
-                </select><br>
-                <br>
-                <span *ngIf="cname.errors?.required">Type must be selected.</span>
-                  
+                <button type="submit" class="btn btn-success btn-lg" [disabled]="regform.invalid">View Product</button>
             </div>
-          
-        <br>
-        <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>
+        </form>
 
-        <!---<div>
-            <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>-->
-   
-</form>
 <div class="container">
-    <h3 style="color: blue;">Products</h3>
-<table border="1">
+    <div class="table-responsive">
+        <table class="table table-dark ">
+            <h3><span class="badge badge-lg badge-danger badge-block ">Compare Products Here</span></h3>
+            <tr>
+                <th>ProductID</th>
+                <th>BrandName</th>
+                <th>Image</th>
+                <th>Description</th>
+                <th>CategoryID</th>
+                <th>RetailerID</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+            <tr *ngFor="let item of prodlist">
 
-    <tr>
-        <th>ProductID</th>
-        <th>BrandName</th>
-        <th>Image</th>
-        <th>Description</th>
-        <th>CategoryID</th>
-        <th>RetailerID</th>
-        <th>Price</th>
-        <th>Quantity</th>
-    </tr>
-    <tr *ngFor="let item of prodlist">
-        
-            <td>{{item.Product_Id}}</td>
-            <td>{{item.Product_BrandName}}</td>
-          <!---- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-->
+                <td>{{item.Product_Id}}</td>
+                <td>{{item.Product_BrandName}}</td>
+                <!---- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-->
 
-            <td><img src ="../../../assets/images/{{item.Product_Image}}" alt="" border =3 height =100 width=100 ></td>
-            <td>{{item.Product_Description}}</td>
-            <td>{{item.Category_Id}}</td>
-            <td>{{item.Retailer_ID}}</td>
-            <td>{{item.Product_Price}}</td>
-            <td>{{item.Product_Quantity}}</td>
-          
-            <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
-    </tr>
+                <td><img src="../../../assets/images/{{item.Product_Image}}" alt="" border=3 height=100 width=100></td>
+                <td>{{item.Product_Description}}</td>
+                <td>{{item.Category_Id}}</td>
+                <td>{{item.Retailer_ID}}</td>
+                <td>{{item.Product_Price}}</td>
+                <td>{{item.Product_Quantity}}</td>
+
+                <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
+            </tr>
+        </table>
+    </div>

@@ -1,0 +1,11 @@
+.bg{
+    background: url('D:\WebsiteShop\Online_Shopping\src\assets\images\logincover2.jpg');
+    
+    background-size: 100%;
+    height: 100%;
+    background-image: no-repeat;
+    background-attachment: fixed;
+  }
+  .opaque{
+      opacity: 0.96;
+  }
