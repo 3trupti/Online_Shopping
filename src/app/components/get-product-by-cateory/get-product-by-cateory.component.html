@@ -40,8 +40,15 @@
                 <option value="Vero Moda">Vero Moda</option>
                 <option value="Roadster">Roadster</option>
             </select><br>
+
+            <select name="bname">
+                <option value="1500">Less than 1500</option>
+                <option value="3000">Less than 3000</option>
+                <option value="5000">Less than 5000</option>
+                <option value="7000">Less than 8000</option>
+                <option value="100000">8000+</option>
+            </select><br>
             <br>
-            <span *ngIf="bname.errors?.required">Type must be selected.</span>
               
         </div>
       
@@ -49,6 +56,33 @@
         <br>
         <button bname="submit" [disabled]="regform.invalid">Filter</button>
     </div>
+
+    <!--<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
+        <div class="container">
+    
+            <div>
+                <br>
+                <label for="bname"><b>Price</b></label>
+                <select name="bname" (click)="Price_Product()" required>
+                    <option value="1500">Less than 1500</option>
+                    <option value="3000">Less than 3000</option>
+                    <option value="5000">Less than 5000</option>
+                    <option value="7000">Less than 8000</option>
+                    <option value="100000">8000+</option>
+                </select><br>
+                <br>
+                <span *ngIf="bname.errors?.required">Type must be selected.</span>
+                  
+            </div>
+          
+           
+            <br>
+            <button bname="submit" >Filter</button>
+        </div>
+    
+            
+        
+    </form>-->
     
 
 <table border="1">

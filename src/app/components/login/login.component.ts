@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
     console.log(data);
     if(data=="Customer")
     {
+      localStorage.setItem("sess","true");
+
       alert('Customer Login Successful');
       localStorage.setItem('Email',this.email);
       localStorage.setItem('TType',"Customer")
@@ -58,6 +60,7 @@ export class LoginComponent implements OnInit {
 
     else if(data=="Retailer")
     {
+      localStorage.setItem("sess","true");
       alert('Retailer Login Successful');
       localStorage.setItem('Email',this.email);
       localStorage.setItem('TType',"Retailer")
@@ -69,6 +72,7 @@ export class LoginComponent implements OnInit {
 
     else if(data=="Admin")
     {
+      localStorage.setItem("sess","true");
       alert('Admin Login Successful');
       localStorage.setItem('Email',this.email);
 

@@ -46,8 +46,9 @@ export class GetProductByCateoryComponent implements OnInit {
           });
         }
 
-
+////Filter By Brand Name
         Product(regform:NgForm):void{
+          
           this.prod.Product_BrandName=regform.value.bname;
           this.cname= localStorage.getItem("cname");
        
@@ -59,6 +60,8 @@ export class GetProductByCateoryComponent implements OnInit {
                        
                  });
                }
+
+///////////Filter by price
 
 
 

@@ -2,6 +2,8 @@ import { Component, OnInit ,NgZone} from '@angular/core';
 import {FormsModule,NgForm,FormGroup} from '@angular/forms';
 import{NgModule} from '@angular/core'
 import { Router } from '@angular/router';
+import { ResourceLoader } from '@angular/compiler';
+import { isGeneratedFile } from '@angular/compiler/src/aot/util';
 
 
 @Component({
@@ -20,8 +22,20 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sess=localStorage.getItem("email");
+    
+   // alert(this.sess);
   }
+
+  /*Logout():void{
+    {
+      this.sess=localStorage.getItem("sess");
+      if(this.sess=="true"){
+
+       this.sess="false";}
+     }
+    
+  }*/
+
   Mobile():void{
     localStorage.setItem("cname","Electronics-Mobile");
    if(localStorage.getItem("reload")=="false"){
