@@ -15,13 +15,11 @@ import{GetProductByCateoryComponent} from './components/get-product-by-cateory/g
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
-<<<<<<< HEAD
-
-=======
 import {FilterByPriceComponent} from './components/filter-by-price/filter-by-price.component';
 import {FilterByBrandNameComponent} from './components/filter-by-brand-name/filter-by-brand-name.component';
 import {CartComponent} from './components/cart/cart.component';
->>>>>>> 834545385fa2c83e8068ad40c90a8c32e9c0778c
+import { CompareProductsComponent } from './components/compare-products/compare-products.component';
+
  
 
 const routes: Routes= [
@@ -35,10 +33,7 @@ const routes: Routes= [
   {path: 'CustomerHome',component:CustomerHomeComponent},
   {path: 'RetailerHome',component:RetailerHomeComponent},
   {path: 'AdminHome',component:AdminHomeComponent},
-<<<<<<< HEAD
-=======
   {path:'Retailer_View',component:GetProductByRetailerIDComponent},
->>>>>>> 834545385fa2c83e8068ad40c90a8c32e9c0778c
   {path: 'Category',component:GetProductByCateoryComponent},
 
   {path : 'AddRetailer',component:AddRetailerComponent},
@@ -47,7 +42,8 @@ const routes: Routes= [
   {path: 'AddProduct',component:AddProductComponent},
   {path: 'Filter_Price',component:FilterByBrandNameComponent},
   {path: 'Filter_Brand',component:FilterByBrandNameComponent},
-  {path:'Cart', component:CartComponent}
+  {path:'Cart', component:CartComponent},
+  {path:'Compare',component:CompareProductsComponent},
 
 
 

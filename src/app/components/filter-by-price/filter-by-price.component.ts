@@ -30,7 +30,7 @@ export class FilterByPriceComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  Product(regform:NgForm):void{
+ /* Product(regform:NgForm):void{
    this.prod.Product_Price=regform.value.bname;
   // this.cat.Category_Name = regform.value.cname;
     this.svc.FilterByPrice(this.prod.Product_Price).subscribe((data:ProductInfoModule[])=>
@@ -40,4 +40,5 @@ export class FilterByPriceComponent implements OnInit {
                 
           });
         }
-      }
+      }*/
+    }

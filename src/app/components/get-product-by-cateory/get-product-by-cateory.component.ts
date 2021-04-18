@@ -59,39 +59,55 @@ export class GetProductByCateoryComponent implements OnInit {
                        
                  });
                }
+               
+
+               Product1(regform:NgForm):void{
+                this.prod.Product_Price=regform.value.bname;
+                this.cname= localStorage.getItem("cname");
+              
+               // this.cat.Category_Name = regform.value.cname;
+                 this.svc.FilterByPrice(this.prod.Product_Price,this.cname).subscribe((data:ProductInfoModule[])=>
+                       {
+                         this.prodlist=data;
+                         console.log(this.prodlist);   
+                       });
+                     }
+
+/////////
+
+  SortbyPrice(): void {
+    this.cname = localStorage.getItem("cname");
+
+    // this.cat.Category_Name = regform.value.cname;
+    this.svc.SortByPrice(this.cname).subscribe((data: ProductInfoModule[]) => {
+      this.prodlist = data;
+      console.log(this.prodlist);
+    });
+  }
+  SortbyName(): void {
+    this.cname = localStorage.getItem("cname");
+
+    // this.cat.Category_Name = regform.value.cname;
+    this.svc.SortByName(this.cname).subscribe((data: ProductInfoModule[]) => {
+      this.prodlist = data;
+      console.log(this.prodlist);
+    });
+  }
 
 
 
 
 
-///filter functiins
-/*Brand():void{
-
-  alert("clicked")
-  this.ngzone.run(()=>this.router.navigateByUrl('/Filter_Brand'));
-
-
-
-}
-Price():void{
-  this.ngzone.run(()=>this.router.navigateByUrl('/Filter_Price'));
-
-
-
-
-}
-*/
 
 
 
 
 
 
-
-//Add to cart function
- AddToCart(id:number):void{
-    this.cartprodid=id;
-    this.cartemail=localStorage.getItem("Email");
+  //Add to cart function
+  AddToCart(id: number): void {
+    this.cartprodid = id;
+    this.cartemail = localStorage.getItem("Email");
 
     
     if(localStorage.getItem("TType")=="Customer")

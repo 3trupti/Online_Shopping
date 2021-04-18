@@ -28,12 +28,8 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
 import { GetProductByCateoryComponent } from './components/get-product-by-cateory/get-product-by-cateory.component';
 import { FilterByBrandNameComponent } from './components/filter-by-brand-name/filter-by-brand-name.component';
 import { FilterByPriceComponent } from './components/filter-by-price/filter-by-price.component';
-<<<<<<< HEAD
-import { CompareProductsComponent } from './components/compare-products/compare-products.component';
-=======
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
->>>>>>> 834545385fa2c83e8068ad40c90a8c32e9c0778c
-
+import{CompareProductsComponent} from './components/compare-products/compare-products.component'
 
 
 @NgModule({
@@ -70,11 +66,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
    
     FilterByPriceComponent,
     CustomerHomeComponent,
-<<<<<<< HEAD
-    CompareProductsComponent
-=======
-    OrderDetailsComponent
->>>>>>> 834545385fa2c83e8068ad40c90a8c32e9c0778c
+    OrderDetailsComponent,
+    CompareProductsComponent,
 
     
    

@@ -34,27 +34,32 @@ GetProductInfo():Observable<ProductInfoModule[]>
 GetProductById(email:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByRetailerID'+'/'+ email+"/");
 }
+Compare(cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'Compare'+'/'+cname);
+}
+
 
 GetProductByCategory(cname:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByCategoryName'+'/'+cname);
 }
 
-<<<<<<< HEAD
-Compare(cname:string):Observable<ProductInfoModule[]>{
-  return this.http.get<ProductInfoModule[]>(this.url +'/'+'Compare'+'/'+cname);
-}
-
-FilterByBrandName(bname:string):Observable<ProductInfoModule[]>{
-  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductBrandName'+'/'+bname);
-=======
 FilterByBrandName(bname:string,cname:string):Observable<ProductInfoModule[]>{
-  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductBrandName'+'/'+bname +"/" + cname);
->>>>>>> 834545385fa2c83e8068ad40c90a8c32e9c0778c
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductBrandName'+'/'+bname +'/'+ cname);
 }
 
-FilterByPrice(price:number):Observable<ProductInfoModule[]>{
-  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductPrice'+'/'+price);
+FilterByPrice(price:number,cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductPrice'+'/'+price+'/'+cname);
 }
+
+SortByPrice(cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByPrice'+'/'+cname);
+}
+
+SortByName(cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByName'+'/'+cname);
+}
+
+
 
 /*UpdateProduct(id:number,prod:ProductInfoModule):Observable<boolean>{
   return this.http.put<boolean>(this.url +"/UpdateProduct/",id,this.httpOptions);

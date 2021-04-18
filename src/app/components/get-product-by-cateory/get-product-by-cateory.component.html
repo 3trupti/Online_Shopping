@@ -5,50 +5,60 @@
 </div>
 <h1 style="color: black;"><b>Product BY Category_Name Details</b></h1>
 
-           
-<!--<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
-    <div class="container">
-      
-       <div>Category Name</div>
-        <input type="text" name="cname" [(ngModel)]="model.cname" #cname="ngModel" required><br><br>
-        <span *ngIf="cname.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
-        <div>
-        <br>
-        <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>
 
-        <div>
-            <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>
-    </div>
-</form>
-<div class="container">
-    <h3 style="color: blue;">Products</h3>
-    
-
-   <button  type="submit" (click)="Brand()">Brand
-
-   </button>-->
    <form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
     <div class="container">
 
+
         <div>
-            <br>
-            <label for="bname"><b>Brand Name</b></label>
-            <select name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
-                <option value="Nike">Nike</option>
-                <option value="Vero Moda">Vero Moda</option>
-                <option value="Roadster">Roadster</option>
-            </select><br>
-            <br>
-            <span *ngIf="bname.errors?.required">Type must be selected.</span>
-              
-        </div>
-      
-       
-        <br>
-        <button bname="submit" [disabled]="regform.invalid">Filter</button>
+            <td>
+                <br>
+                <label for="bname"><b>Brand Name</b></label>
+                <select name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
+                    <option value="Nike">Nike</option>
+                    <option value="Vero Moda">Vero Moda</option>
+                    <option value="Roadster">Roadster</option>
+                </select><br>
+                <br>
+               <!---- <span *ngIf="bname.errors?.required"></span>--> 
+            </td>    
+        </div>       
     </div>
+    <form #regform="ngForm" name="regform" (ngSubmit)="Product1(regform)">
+        <div class="container">
+    
+            <div>
+                <td>
+                    <br>
+                    <label for="bname"><b>Price</b></label>
+                    <select name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
+                        <option value="1500">Less than 1500</option>
+                        <option value="3000">Less than 3000</option>
+                        <option value="5000">Less than 5000</option>
+                        <option value="7000">Less than 8000</option>
+                        <option value="100000">8000+</option>
+                    </select><br>
+                    <br>
+                </td>
+                <td>
+                    <br>
+                    <button bname="submit" >Filter</button>
+                </td>    
+            </div> 
+        </div>
+
+        <div>
+            <button (click)='SortbyName()'>Sort--> Name</button>
+        </div>
+        <div>
+            <button (click)='SortbyPrice()'>Sort--> Price</button>
+        </div>
+        
+
+       
+
+
+
     
 
 <table border="1">
@@ -83,3 +93,27 @@
             </a></td>-->
            <!---- <td><button (click)="delete(item.Product_Id)">Edit</button></td>-->
             <!--<td><button (click)="delete(item.Product_Id)">AddTOCart</button></td>-->
+           
+<!--<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
+    <div class="container">
+      
+       <div>Category Name</div>
+        <input type="text" name="cname" [(ngModel)]="model.cname" #cname="ngModel" required><br><br>
+        <span *ngIf="cname.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
+        <div>
+        <br>
+        <button type="submit" [disabled]="regform.invalid">View Product</button>
+        </div>
+
+        <div>
+            <button type="submit" [disabled]="regform.invalid">View Product</button>
+        </div>
+    </div>
+</form>
+<div class="container">
+    <h3 style="color: blue;">Products</h3>
+    
+
+   <button  type="submit" (click)="Brand()">Brand
+
+   </button>-->
