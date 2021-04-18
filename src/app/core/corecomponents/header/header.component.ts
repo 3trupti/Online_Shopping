@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
 
   }
   Laptop():void{
-    localStorage.setItem("cname","Electronics-Laptop");
+    localStorage.setItem("cname","Electronics-Laptops");
     if(localStorage.getItem("reload")=="false"){
       localStorage.setItem("reload","true");
 

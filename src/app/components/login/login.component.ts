@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('Email',this.email);
       localStorage.setItem('TType',"Customer")
 
-      this.ngzone.run(()=>this.router.navigateByUrl('/CustomerHome'));
+      this.ngzone.run(()=>this.router.navigateByUrl('/Home'));
 
       
 

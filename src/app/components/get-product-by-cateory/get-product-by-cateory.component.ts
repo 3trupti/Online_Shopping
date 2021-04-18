@@ -25,6 +25,7 @@ export class GetProductByCateoryComponent implements OnInit {
   newid:Number;
   cartemail:string;
   cartprodid:number;
+  cartID :string;
 
 
 
@@ -99,8 +100,13 @@ Price():void{
       localStorage.setItem("Product_id",this.cartprodid.toString()); 
       this.svc.AddToCart(this.cartprodid,this.cartemail).subscribe((data:string)=>
       {
-        alert(data);
+        //data is nothing by cart Id of customer storing in local storage to access for displaying cart details
+
+        localStorage.setItem("Cart_Id",data);
+
         console.log(data);
+        location.reload();
+
         
 
       });

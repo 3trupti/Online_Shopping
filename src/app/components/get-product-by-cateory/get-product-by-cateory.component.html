@@ -70,7 +70,9 @@
             <td>{{item.Product_Description}}</td>
             <td>{{item.Product_Price}}</td>
           
-            <td><button (click)="AddToCart((item.Product_Id))">AddCart</button></td>
+            <td><span *ngIf="item.Product_Quantity==0" style="color: red;" >OutofStock</span>
+            <button  *ngIf="!item.Product_Quantity==0" (click)="AddToCart((item.Product_Id))">AddCart</button></td>
+
 
 
 
