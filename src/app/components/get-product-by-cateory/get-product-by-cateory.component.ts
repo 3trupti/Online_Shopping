@@ -46,8 +46,9 @@ export class GetProductByCateoryComponent implements OnInit {
           });
         }
 
-
+////Filter By Brand Name
         Product(regform:NgForm):void{
+          
           this.prod.Product_BrandName=regform.value.bname;
           this.cname= localStorage.getItem("cname");
        
@@ -94,6 +95,8 @@ export class GetProductByCateoryComponent implements OnInit {
     });
   }
 
+///////////Filter by price
+
 
 
 
@@ -119,6 +122,7 @@ export class GetProductByCateoryComponent implements OnInit {
         //data is nothing by cart Id of customer storing in local storage to access for displaying cart details
 
         localStorage.setItem("Cart_Id",data);
+        alert("Item Added to Cart")
 
         console.log(data);
         location.reload();
