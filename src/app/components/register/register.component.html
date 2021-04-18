@@ -1,112 +1,91 @@
-<div style="background-color:black;">
-    
-  
+<div class=" bg h-100">
+    <div class="m-5 container container1 h-75">
+    <form #regform="ngForm" class="bg-light  border shadow-lg p-5 m-5" name="regform" (ngSubmit)="RegisterData(regform)">
+        <section class="row">
+            <section class="col-6 clo-sm-4 ">
+                <div class="form-group">
+                    <label for="uname"><b>Username :</b></label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="model.name"
+                        placeholder="Enter Username" #name="ngModel" required>
+                    <span *ngIf="name.errors?.required">Name has to be entered</span>
+                </div>
+                <div class="form-group">
+                    <label for="mobile"><b>Mobile No.</b></label>
+                    <input type="text" class="form-control" name="mno" [(ngModel)]="model.mno" #mno="ngModel"
+                        pattern="^[0-9]{10}$" placeholder="Enter Mobile No." required>
+                    <span *ngIf="mno.errors?.required">Mobile No cannot be blank</span>
+                    <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
+                </div>
+                <div class="form-group">
+                    <label for="addr"><b>Address :</b></label>
+                    <input type="text" class="form-control" name="address" [(ngModel)]="model.address"
+                        placeholder="Enter Address" #address="ngModel" required>
+                    <span *ngIf="address.errors?.required">Address has to be entered</span>
+                </div>
+                <div class="form-group">
+                    <label for="country"><b>Country :</b></label>
+                    <input type="text" class="form-control" name="country" [(ngModel)]="model.country"
+                        placeholder="Enter country" #country="ngModel" required>
+                    <span *ngIf="country.errors?.required">Country has to be entered</span>
+                </div>
+                <div class="form-group">
+                    <label for="state"><b>State :</b></label>
+                    <input type="text" class="form-control" name="state" [(ngModel)]="model.state"
+                        placeholder="Enter State" #state="ngModel" required>
+                    <span *ngIf="state.errors?.required">State has to be entered</span>
+                </div>
+            </section>
+            <section class="col-6 clo-sm-4 ">
+               
+                <div class="form-group">
+                    <label for="city"><b>City :</b></label>
+                    <input type="text" class="form-control" name="city" [(ngModel)]="model.city"
+                        placeholder="Enter City" #city="ngModel" required>
+                    <span *ngIf="city.errors?.required">City has to be entered</span>
+                </div>
+                <div class="form-group">
+                    <label for="code"><b>Postal Code :</b></label>
+                    <input type="text" class="form-control" name="code" [(ngModel)]="model.code"
+                        placeholder="Enter Postal Code" #code="ngModel" required>
+                    <span *ngIf="code.errors?.required">Postal Code has to be entered</span>
+                </div>
+                <div class="form-group">
+                    <label for="email"><b>Email :</b></label>
+                    <input type="email" class="form-control" name="txtemail" [(ngModel)]="model.txtemail"
+                        pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" placeholder="Enter Email" #txtemail="ngModel" required>
+                    <span *ngIf="txtemail.errors?.required">Email cannot be blank</span>
+                    <span *ngIf="txtemail.errors?.pattern">Follow Email restriction</span>
+                </div>
+                <div class="form-group">
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" class="form-control" name="txtpass" [(ngModel)]="model.txtpass"
+                        placeholder="Enter Password" #txtpass="ngModel" minlength="8" maxlength="8"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
+                    <span *ngIf="txtpass.errors?.pattern">Follow password restriction </span>
+                    <span *ngIf="txtpass.errors?.minlength">Minimum password length is 4 characters</span>
+                </div>
+                <div class="form-group">
+                    <br>
+                    <label for="type"><b>UserType :</b></label>
+                    <select name="Type" [(ngModel)]="model.Type" #Type="ngModel" required>
+                        <option value="Customer">Customer</option>
+                        <option value="Retailer">Retailer</option>
+                    </select><br>
+                    <br>
+                    <span *ngIf="Type.errors?.required">Type must be selected.</span>
+
+                </div>
+            </section>
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-primary btn-block"[disabled]="regform.invalid">Register</button>
+            </div>
+            <div>
+
+                Already have an account ? <a routerLink="/Login"><b>Login Here</b></a>
+            </div>
+        </section>
+    </form>
+    </div>
 </div>
-<div class="row">
-    <div class="main">
-        <div class="card">
-           
-<form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
-    <div class="container">
-
-    <div>
-        <label for="uname"><b>Username :</b></label>
-        <input type="text" name="name" [(ngModel)]="model.name" placeholder="Enter Username" #name="ngModel" required>
-        <span *ngIf="name.errors?.required">Name has to be entered</span>
-    </div>
-
-    <div>
-        <label for="mobile"><b>Mobile No.</b></label>
-        <input type="text" name="mno" [(ngModel)]="model.mno" #mno="ngModel" pattern="^[0-9]{10}$" placeholder="Enter Mobile No." required>
-        <span *ngIf="mno.errors?.required">Mobile No cannot be blank</span>
-        <span *ngIf="mno.errors?.pattern">MobNo has to be numeric and 10 digits</span>
-    </div>
-    
-	 <div>
-        <label for="addr"><b>Address :</b></label>
-        <input type="text" name="address" [(ngModel)]="model.address" placeholder="Enter Address" #address="ngModel" required>
-        <span *ngIf="address.errors?.required">Address has to be entered</span>
-    </div>
-    <div>
-        <label for="country"><b>Country :</b></label>
-        <input type="text" name="country" [(ngModel)]="model.country" placeholder="Enter country" #country="ngModel" required>
-        <span *ngIf="country.errors?.required">Country has to be entered</span>
-    </div>
-
-    <div>
-        <label for="state"><b>State :</b></label>
-        <input type="text" name="state" [(ngModel)]="model.state" placeholder="Enter State" #state="ngModel" required>
-        <span *ngIf="state.errors?.required">State has to be entered</span>
-    </div>
-
-    <div>
-        <label for="city"><b>City :</b></label>
-        <input type="text" name="city" [(ngModel)]="model.city" placeholder="Enter City" #city="ngModel" required>
-        <span *ngIf="city.errors?.required">City has to be entered</span>
-    </div>
-    <div>
-        <label for="code"><b>Postal Code :</b></label>
-        <input type="text" name="code" [(ngModel)]="model.code" placeholder="Enter Postal Code" #code="ngModel" required>
-        <span *ngIf="code.errors?.required">Postal Code has to be entered</span>
-    </div>
-	
-	<div>
-        <label for="email"><b>Email :</b></label>
-        <input type="email" name="txtemail" [(ngModel)]="model.txtemail" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" placeholder="Enter Email" #txtemail="ngModel" required>
-        <span *ngIf="txtemail.errors?.required">Email cannot be blank</span>
-        <span *ngIf="txtemail.errors?.pattern">Follow Email restriction</span>
-    </div>
-	
-	
-    <div>
-        <label for="psw"><b>Password</b></label>
-        <input type="password" name="txtpass" [(ngModel)]="model.txtpass" placeholder="Enter Password" #txtpass="ngModel" minlength="8" maxlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
-        <span *ngIf="txtpass.errors?.required">Password cannot be blank</span>
-        <span *ngIf="txtpass.errors?.pattern">Follow password restriction </span>
-        <span *ngIf="txtpass.errors?.minlength">Minimum password length is 4 characters</span>
-    </div>
-	
-	
-<!--<div>
-    <label for="type"><b>UserType :</b></label>
-    <input type="text" name="Type" [(ngModel)]="model.Type" placeholder="Enter Type" #Type="ngModel"  >
-
-</div>-->
-	
-
-   <div>
-        <br>
-        <label for="type"><b>UserType :</b></label>
-        <select name="Type" [(ngModel)]="model.Type" #Type="ngModel" required>
-            <option value="Customer">Customer</option>
-            <option value="Retailer">Retailer</option>
-        </select><br>
-        <br>
-        <span *ngIf="Type.errors?.required">Type must be selected.</span>
-          
-    </div>
-	
-    
-  <!-- <div>
-    
-        <button type="submit" [disabled]="regform.invalid">Register as Retailer</button>
-  </div>-->
-  <div>
-    
-    <button type="submit" [disabled]="regform.invalid">Register</button>
-</div>
-  <div>
-     <!---- Already have an account ? <a routerLink="Login" class="nav-link ">Login</a>-->
-      Already have an account ? <a routerLink="/Login"><b>Login Here</b></a>
-  </div>
-	
-    </div>
-
-	
-	
-</form>
-
-</div>
-</div>
-</div>
-<router-outlet></router-outlet>

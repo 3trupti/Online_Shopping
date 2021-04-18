@@ -1,15 +1,15 @@
 
-<div style="background-color:black;">
+<div>
     
   
 
-<h1 style="color: black;"><b>Admin's Profile</b></h1>
+<h1 style="text-align: center;"><b><i>Admin Profile</i></b></h1>
 
            
 <form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
     
     <div>
-        <button type="submit" [disabled]="regform.invalid">Add Retailer</button>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="regform.invalid">Add Retailer</button>
   </div>
  
 </form>   
