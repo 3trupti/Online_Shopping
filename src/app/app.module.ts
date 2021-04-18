@@ -28,6 +28,7 @@ import { CustomerHomeComponent } from './components/customer-home/customer-home.
 import { GetProductByCateoryComponent } from './components/get-product-by-cateory/get-product-by-cateory.component';
 import { FilterByBrandNameComponent } from './components/filter-by-brand-name/filter-by-brand-name.component';
 import { FilterByPriceComponent } from './components/filter-by-price/filter-by-price.component';
+import { CompareProductsComponent } from './components/compare-products/compare-products.component';
 
 
 
@@ -64,7 +65,8 @@ import { FilterByPriceComponent } from './components/filter-by-price/filter-by-p
     FilterByBrandNameComponent,
    
     FilterByPriceComponent,
-    CustomerHomeComponent
+    CustomerHomeComponent,
+    CompareProductsComponent
 
     
    

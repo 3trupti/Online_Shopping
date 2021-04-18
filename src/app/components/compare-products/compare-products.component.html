@@ -3,15 +3,29 @@
     <h1>QuickShop</h1>
   
 </div>
-<h1 style="color: black;"><b>Product Details</b></h1>
+<h1 style="color: black;"><b>Compare</b></h1>
 
            
 <form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
-    <div class="container"
-       <div>Retailer ID</div>
-        <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" required><br><br>
-        <span *ngIf="id.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
-        <div>
+    <div class="container">
+      
+       <!--<div>Category Name</div>
+        <input type="text" name="cname" [(ngModel)]="model.cname" #cname="ngModel" required><br><br>
+        <span *ngIf="cname.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
+        <div>-->
+            <div>
+                <br>
+                <label for="cname"><b>Category</b></label>
+                <select name="cname" [(ngModel)]="model.cname" #cname="ngModel" required>
+                    <option value="Sports">Sports</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Men-Fashion">Men-Fashion</option>
+                </select><br>
+                <br>
+                <span *ngIf="cname.errors?.required">Type must be selected.</span>
+                  
+            </div>
+          
         <br>
         <button type="submit" [disabled]="regform.invalid">View Product</button>
         </div>
@@ -19,7 +33,7 @@
         <!---<div>
             <button type="submit" [disabled]="regform.invalid">View Product</button>
         </div>-->
-    </div>
+   
 </form>
 <div class="container">
     <h3 style="color: blue;">Products</h3>
@@ -47,15 +61,6 @@
             <td>{{item.Retailer_ID}}</td>
             <td>{{item.Product_Price}}</td>
             <td>{{item.Product_Quantity}}</td>
-           <!---- <td><a routerLink="/UpdateProduct/{{prodlist.ProductID}}">
-                <i class="fa fa-edit" style=" font-size: 30px;color:blue; cursor: pointer;"></i>
-            </a></td>-->
-            <td><button (click)="delete(item.Product_Id)">Edit</button></td>
-            <td><button (click)="delete(item.Product_Id)">Delete</button></td>
-
-
+          
+            <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
     </tr>
-        
-
-</table>
-</div>

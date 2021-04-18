@@ -14,6 +14,7 @@ import{GetProductByCateoryComponent} from './components/get-product-by-cateory/g
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
+
  
 
 const routes: Routes= [
@@ -27,7 +28,7 @@ const routes: Routes= [
   {path: 'CustomerHome',component:CustomerHomeComponent},
   {path: 'RetailerHome',component:RetailerHomeComponent},
   {path: 'AdminHome',component:AdminHomeComponent},
-  {path: 'Category',component:GetProductByCateoryComponent}
+  {path: 'Category',component:GetProductByCateoryComponent},
 
   {path : 'AddRetailer',component:AddRetailerComponent},
   {path: 'AdminHome',component:AdminHomeComponent},

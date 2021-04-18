@@ -39,6 +39,10 @@ GetProductByCategory(cname:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'GetProductsByCategoryName'+'/'+cname);
 }
 
+Compare(cname:string):Observable<ProductInfoModule[]>{
+  return this.http.get<ProductInfoModule[]>(this.url +'/'+'Compare'+'/'+cname);
+}
+
 FilterByBrandName(bname:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByProductBrandName'+'/'+bname);
 }
