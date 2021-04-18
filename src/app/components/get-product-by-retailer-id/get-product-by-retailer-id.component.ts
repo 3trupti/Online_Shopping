@@ -24,6 +24,7 @@ export class GetProductByRetailerIDComponent implements OnInit {
    svc: ProductService;
    ngzone:NgZone;
    router:Router;
+   store:string;
   prodlist: ProductInfoModule[];
   prod=new ProductInfoModule();
   
@@ -36,19 +37,35 @@ export class GetProductByRetailerIDComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  
+   
+    localStorage.setItem("reload","false");
+
+    if(localStorage.getItem("TType")=="Retailer"){}
+    else{
+      alert("You are Not a Authorized Retailer to view this page")
+      this.ngzone.run(()=>this.router.navigateByUrl('/Login'));
+
+    }
     /*this.svc.GetProductById(this.prod.Retailer_ID).subscribe(data:ProductInfoModule)=>
     {
       this.prodlist=data;
       console.log(this.prodlist);
     }*/
   }
+  AddProduct():void{
+    this.ngzone.run(()=>this.router.navigateByUrl('/AddProduct'));
+
+  }
 
  Product(regform:NgForm):void{
-    this.prod.Retailer_ID=regform.value.id;
-    this.svc.GetProductById(this.prod.Retailer_ID).subscribe((data:ProductInfoModule[])=>
+   // this.prod.Retailer_Email=regform.value.email;
+    this.store=localStorage.getItem('Email')
+    this.svc.GetProductById(this.store).subscribe((data:ProductInfoModule[])=>
           {
+            
             this.prodlist=data;
+            
+
             console.log(this.prodlist);
           
            /*this.BrandName= data.Product_BrandName;

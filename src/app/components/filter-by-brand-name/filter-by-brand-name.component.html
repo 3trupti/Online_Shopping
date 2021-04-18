@@ -10,9 +10,12 @@
             <br>
             <label for="bname"><b>Brand Name</b></label>
             <select name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
-                <option value="Nike">Nike</option>
+                <option value="Levis">Nike</option>
                 <option value="Vero Moda">Vero Moda</option>
                 <option value="Roadster">Roadster</option>
+                <option value="Samsung ">Roadster</option>
+                <option value="MI">Roadster</option>
+
             </select><br>
             <br>
             <span *ngIf="bname.errors?.required">Type must be selected.</span>

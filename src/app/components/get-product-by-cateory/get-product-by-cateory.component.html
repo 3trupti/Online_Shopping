@@ -6,7 +6,7 @@
 <h1 style="color: black;"><b>Product BY Category_Name Details</b></h1>
 
            
-<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
+<!--<form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
     <div class="container">
       
        <div>Category Name</div>
@@ -17,45 +17,68 @@
         <button type="submit" [disabled]="regform.invalid">View Product</button>
         </div>
 
-        <!---<div>
+        <div>
             <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>-->
+        </div>
     </div>
 </form>
 <div class="container">
     <h3 style="color: blue;">Products</h3>
+    
+
+   <button  type="submit" (click)="Brand()">Brand
+
+   </button>-->
+   <form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
+    <div class="container">
+
+        <div>
+            <br>
+            <label for="bname"><b>Brand Name</b></label>
+            <select name="bname" [(ngModel)]="model.bname" #bname="ngModel" required>
+                <option value="Nike">Nike</option>
+                <option value="Vero Moda">Vero Moda</option>
+                <option value="Roadster">Roadster</option>
+            </select><br>
+            <br>
+            <span *ngIf="bname.errors?.required">Type must be selected.</span>
+              
+        </div>
+      
+       
+        <br>
+        <button bname="submit" [disabled]="regform.invalid">Filter</button>
+    </div>
+    
+
 <table border="1">
 
+    
+
     <tr>
-        <th>ProductID</th>
         <th>BrandName</th>
         <th>Image</th>
         <th>Description</th>
-        <th>CategoryID</th>
-        <th>RetailerID</th>
         <th>Price</th>
-        <th>Quantity</th>
     </tr>
     <tr *ngFor="let item of prodlist">
         
-            <td>{{item.Product_Id}}</td>
             <td>{{item.Product_BrandName}}</td>
           <!---- <td><img src="{{item.Product_Image}}" alt="" border =3 height =100 width=100></td>-->
 
             <td><img src ="../../../assets/images/{{item.Product_Image}}" alt="" border =3 height =100 width=100 ></td>
             <td>{{item.Product_Description}}</td>
-            <td>{{item.Category_Id}}</td>
-            <td>{{item.Retailer_ID}}</td>
             <td>{{item.Product_Price}}</td>
-            <td>{{item.Product_Quantity}}</td>
           
-            <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
+            <td><span *ngIf="item.Product_Quantity==0" style="color: red;" >OutofStock</span>
+            <button  *ngIf="!item.Product_Quantity==0" (click)="AddToCart((item.Product_Id))">AddCart</button></td>
+
 
 
 
     </tr>
 
-     <!---- <td><a routerLink="/UpdateProduct/{{prodlist.ProductID}}">
+     <!---- <td><a routerLink="/UpdateProduct/{{prodlist.ProductID}}"> item.Product_Id
                 <i class="fa fa-edit" style=" font-size: 30px;color:blue; cursor: pointer;"></i>
             </a></td>-->
            <!---- <td><button (click)="delete(item.Product_Id)">Edit</button></td>-->

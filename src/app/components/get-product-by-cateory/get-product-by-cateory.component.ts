@@ -21,6 +21,12 @@ export class GetProductByCateoryComponent implements OnInit {
   prod=new ProductInfoModule();
   cat= new CategoryInfoModule();
   id:number;
+  localCategory:string;
+  newid:Number;
+  cartemail:string;
+  cartprodid:number;
+  cartID :string;
+
 
 
   constructor(svc:ProductService,ngzone:NgZone,router:Router) { 
@@ -29,11 +35,95 @@ export class GetProductByCateoryComponent implements OnInit {
     this.router=router;
   }
   ngOnInit(): void {
-  }
-  Product(regform:NgForm):void{
+
+    
+    this.localCategory=localStorage.getItem("cname");
+    this.svc.GetProductByCategory(this.localCategory).subscribe((data:ProductInfoModule[])=>
+          {
+            this.prodlist=data;
+            console.log(this.prodlist);
+                
+          });
+        }
+
+
+        Product(regform:NgForm):void{
+          this.prod.Product_BrandName=regform.value.bname;
+          this.cname= localStorage.getItem("cname");
+       
+         // this.cat.Category_Name = regform.value.cname;
+           this.svc.FilterByBrandName(this.prod.Product_BrandName,this.cname).subscribe((data:ProductInfoModule[])=>
+                 {
+                   this.prodlist=data;
+                   console.log(this.prodlist);
+                       
+                 });
+               }
+
+
+
+
+
+///filter functiins
+/*Brand():void{
+
+  alert("clicked")
+  this.ngzone.run(()=>this.router.navigateByUrl('/Filter_Brand'));
+
+
+
+}
+Price():void{
+  this.ngzone.run(()=>this.router.navigateByUrl('/Filter_Price'));
+
+
+
+
+}
+*/
+
+
+
+
+
+
+
+//Add to cart function
+ AddToCart(id:number):void{
+    this.cartprodid=id;
+    this.cartemail=localStorage.getItem("Email");
+
+    
+    if(localStorage.getItem("TType")=="Customer")
+    {
+
+      localStorage.setItem("Product_id",this.cartprodid.toString()); 
+      this.svc.AddToCart(this.cartprodid,this.cartemail).subscribe((data:string)=>
+      {
+        //data is nothing by cart Id of customer storing in local storage to access for displaying cart details
+
+        localStorage.setItem("Cart_Id",data);
+
+        console.log(data);
+        location.reload();
+
+        
+
+      });
+      
+    }
+    else
+    {
+       alert("Please login to add to cart")
+      this.ngzone.run(()=>this.router.navigateByUrl('/Login'));
+    }
+}
+}
+  /*Product(regform:NgForm):void{
    // this.prod.Category_Id=regform.value.id;
-   this.cat.Category_Name = regform.value.cname;
-    this.svc.GetProductByCategory(this.cat.Category_Name).subscribe((data:ProductInfoModule[])=>
+   //this.cat.Category_Name = regform.value.cname;
+   this.localCategory=localStorage.getItem("cname");
+    this.svc.GetProductByCategory(this.localCategory).subscribe((data:ProductInfoModule[])=>
           {
             this.prodlist=data;
             console.log(this.prodlist);
@@ -52,8 +142,8 @@ export class GetProductByCateoryComponent implements OnInit {
           {
             alert('Unable to Delete');
           }
-          });
+          });*/
       
-      }
-    }
+      
+    
 

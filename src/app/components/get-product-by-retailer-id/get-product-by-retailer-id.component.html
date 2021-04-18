@@ -7,18 +7,30 @@
 
            
 <form #regform="ngForm" name="regform" (ngSubmit)="Product(regform)">
+<<<<<<< HEAD
     <div class="container"
        <div>Retailer ID</div>
         <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" required><br><br>
         <span *ngIf="id.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
+=======
+    <div class="container">
+      
+       <!--<div>Retailer email</div>
+        <input type="text" name="email" [(ngModel)]="model.email" #email="ngModel" required><br><br>
+        <span *ngIf="email.errors?.required" style="color: red;">Retailer Email cannot be blank</span>
+>>>>>>> 834545385fa2c83e8068ad40c90a8c32e9c0778c
         <div>
         <br>
         <button type="submit" [disabled]="regform.invalid">View Product</button>
         </div>
 
-        <!---<div>
+        <h1>Your Retailer_ID is {{prod.Retailer_ID}}</h1>-->
+        <div>
             <button type="submit" [disabled]="regform.invalid">View Product</button>
-        </div>-->
+        </div>
+        <div>
+            <button type="submit" (click)="AddProduct()">Add Product</button>
+        </div>
     </div>
 </form>
 <div class="container">

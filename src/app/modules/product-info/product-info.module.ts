@@ -17,6 +17,7 @@ export class ProductInfoModule {
   Product_Description :string;
   Category_Id: string;
   Retailer_ID:number;
+  Retailer_Email:string;
   Product_Price:number;
   Product_Ouantity :number;
 

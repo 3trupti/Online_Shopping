@@ -5,6 +5,7 @@ import {ProductService} from '../../services/product.service';
 import{ProductInfoModule} from '../../modules/product-info/product-info.module';
 import{Router} from '@angular/router'
 import {CategoryInfoModule} from '../../modules/category-info/category-info.module';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-filter-by-brand-name',
@@ -21,6 +22,8 @@ export class FilterByBrandNameComponent implements OnInit {
   prod=new ProductInfoModule();
   cat= new CategoryInfoModule();
   id:number;
+  cname:string;
+
 
 
   constructor(svc:ProductService,ngzone:NgZone,router:Router) { 
@@ -32,8 +35,10 @@ export class FilterByBrandNameComponent implements OnInit {
   }
   Product(regform:NgForm):void{
    this.prod.Product_BrandName=regform.value.bname;
+   this.cname= localStorage.getItem("cname");
+
   // this.cat.Category_Name = regform.value.cname;
-    this.svc.FilterByBrandName(this.prod.Product_BrandName).subscribe((data:ProductInfoModule[])=>
+    this.svc.FilterByBrandName(this.prod.Product_BrandName,this.cname).subscribe((data:ProductInfoModule[])=>
           {
             this.prodlist=data;
             console.log(this.prodlist);
