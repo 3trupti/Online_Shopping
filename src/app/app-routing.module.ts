@@ -17,6 +17,7 @@ import { AddRetailerComponent } from './add-retailer/add-retailer.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import {FilterByPriceComponent} from './components/filter-by-price/filter-by-price.component';
 import {FilterByBrandNameComponent} from './components/filter-by-brand-name/filter-by-brand-name.component';
+import {CartComponent} from './components/cart/cart.component';
  
 
 const routes: Routes= [
@@ -39,6 +40,7 @@ const routes: Routes= [
   {path: 'AddProduct',component:AddProductComponent},
   {path: 'Filter_Price',component:FilterByBrandNameComponent},
   {path: 'Filter_Brand',component:FilterByBrandNameComponent},
+  {path:'Cart', component:CartComponent}
 
 
 
