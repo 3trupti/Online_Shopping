@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import { CategoryInfoModule } from 'src/app/modules/category-info/category-info.module';
 import {CartDisplayModule} from '../../modules/cart-display/cart-display.module';
 import {CartServiceService} from '../../services/cart-service.service';
+import { Router } from '@angular/router';
+
+
+
 
 @Component({
   selector: 'app-cart',
@@ -16,12 +20,29 @@ export class CartComponent implements OnInit {
   cartdetails:CartDisplayModule[];
   carttotal:number;
   id:number;
+  ngzone: NgZone;
+  router: Router;
 
 
-  constructor(svc:CartServiceService) {this.svc = svc ;}
+
+  constructor(svc:CartServiceService ,ngzone: NgZone,
+    router: Router) {
+    this.svc = svc ;
+    ngzone: ngzone;
+  router: router;
+  }
 
   ngOnInit(): void {
     localStorage.setItem("reload","false");
+
+    if(localStorage.getItem("TType")=="Retailer" || localStorage.getItem("TType")=="Admin")
+    {
+      alert("You Do not own a Cart");
+      this.ngzone.run(()=>this.router.navigateByUrl('/Login'));
+
+    }
+    
+
     this.Cart_Id=parseInt(localStorage.getItem("Cart_Id"));///converted cart id from string to int
 
 

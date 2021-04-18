@@ -33,6 +33,8 @@ export class CompareProductsComponent implements OnInit {
       this.router=router;
     }
     ngOnInit(): void {
+      localStorage.setItem("reload","false");
+
     }
     Product(regform:NgForm):void{
      // this.prod.Category_Id=regform.value.id;

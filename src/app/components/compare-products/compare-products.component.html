@@ -1,4 +1,4 @@
-<div style="background-color:black;">
+<div style="background-color:black; ">
     
     <h1>QuickShop</h1>
   
@@ -14,14 +14,17 @@
         <span *ngIf="cname.errors?.required" style="color: red;">Retailer ID cannot be blank</span>
         <div>-->
             <div>
-                <br>
+                
                 <label for="cname"><b>Category</b></label>
                 <select name="cname" [(ngModel)]="model.cname" #cname="ngModel" required>
-                    <option value="Sports">Sports</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Men-Fashion">Men-Fashion</option>
+                    <option value="Electronics-Mobile">Electronics-Mobile</option>
+                    <option value="Electronics-Laptop">Electronics-Laptop</option>
+                    <option value="Electronics-TV">Electronics-TV</option>
+                    <option value="Mens-Fashion">Mens-Fashion</option>
+                    <option value="Womens-Fashion">Womens-Fashion</option>
+
                 </select><br>
-                <br>
+                
                 <span *ngIf="cname.errors?.required">Type must be selected.</span>
                   
             </div>
@@ -37,7 +40,7 @@
 </form>
 <div class="container">
     <h3 style="color: blue;">Products</h3>
-<table border="1">
+<table border="1" >
 
     <tr>
         <th>ProductID</th>
@@ -62,5 +65,8 @@
             <td>{{item.Product_Price}}</td>
             <td>{{item.Product_Quantity}}</td>
           
-            <td><button (click)="AddToCart(item.Product_Id)">AddCart</button></td>
+            <td><span *ngIf="item.Product_Quantity==0" style="color: red;" >OutofStock</span>
+                <button  *ngIf="!item.Product_Quantity==0" (click)="AddToCart((item.Product_Id))">AddCart</button></td>
+    
+    
     </tr>

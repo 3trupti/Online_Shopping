@@ -122,6 +122,7 @@ export class GetProductByCateoryComponent implements OnInit {
         //data is nothing by cart Id of customer storing in local storage to access for displaying cart details
 
         localStorage.setItem("Cart_Id",data);
+        alert("Item Added to Cart")
 
         console.log(data);
         location.reload();

@@ -46,6 +46,11 @@ export class UserInfoService {
     return this.http.post<boolean>(endpoint,prod,this.httpOptions);
   }
   
+
+  GetCartID(email:string):Observable<number>{
+    return this.http.get<number>(this.url+'/'+'GetCartID'+'/'+ email +'/');
+    
+  }
  
 
   

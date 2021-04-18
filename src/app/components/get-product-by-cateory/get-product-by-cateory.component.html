@@ -22,8 +22,14 @@
                 <br>
                <!---- <span *ngIf="bname.errors?.required"></span>--> 
             </td>    
-        </div>       
+            <td>
+                <br>
+                <button bname="submit" >Filter</button>
+            </td>   
+        </div>   
     </div>
+</form>
+
     <form #regform="ngForm" name="regform" (ngSubmit)="Product1(regform)">
         <div class="container">
     
@@ -46,6 +52,7 @@
                 </td>    
             </div> 
         </div>
+    </form>
 
         <div>
             <button (click)='SortbyName()'>Sort--> Name</button>

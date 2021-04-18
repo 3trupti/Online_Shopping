@@ -15,8 +15,8 @@
           
             <div class="dropdown-menu bg-primary text-white " aria-labelledby="dropdownMenuLink" >
               <a class="dropdown-item text-white" routerLink="Category"  (click)= "Mobile()" >Electronics-Mobile</a>
-              <a class="dropdown-item  text-white" routerLink="Category" (click)="TV()">Electronics-Laptop</a>
-              <a class="dropdown-item  text-white" routerLink="Category" (click)="Laptop()">Electronics-TV</a>
+              <a class="dropdown-item  text-white" routerLink="Category" (click)="Laptop()">Electronics-Laptop</a>
+              <a class="dropdown-item  text-white" routerLink="Category" (click)="TV()">Electronics-TV</a>
               <a class="dropdown-item text-white" routerLink="Category" (click)="Men()">Men-Fashion</a>
               <a class="dropdown-item text-white" routerLink="Category" (click)="Women()">Women-Fashion</a>
             </div>
@@ -26,7 +26,7 @@
 
         </li>
         <li class="nav-item"><a routerLink="Compare"class="nav-link text-white">Compare</a></li>
-        <li class="nav-item"><a routerLink="Cart" class="nav-link text-white">Cart</a></li>
+        <li class="nav-item"><a routerLink="Cart" (click)="GetCartID()"  class="nav-link text-white">Cart</a></li>
 
 
         <!------Adding a drop down menu for account in nav-bar using bootstrap  -->
