@@ -46,6 +46,15 @@ export class AdminProfileComponent implements OnInit {
   RegisterData(regform:NgForm):void{
     console.log(regform.value);
   }
+  AddRetailer():void{
+
+    this.ngzone.run(()=>this.router.navigateByUrl('/Register'));
+
+
+  }
+
+
+
 
   delete(id:number):void{
     this.svc.DeleteRetailer(id).subscribe((data:boolean)=>

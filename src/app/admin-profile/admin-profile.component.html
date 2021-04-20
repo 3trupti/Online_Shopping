@@ -5,7 +5,7 @@
 <!-- Form for Button-->
   <form #regform="ngForm" name="regform" (ngSubmit)="RegisterData(regform)">
     <div>
-      <h1 style="text-align: center;"> <button type="submit" class="btn btn-success" [disabled]="regform.invalid">Add Retailer</button></h1>
+      <h1 style="text-align: center;"> <button type="submit" class="btn btn-success" (click)="AddRetailer()" [disabled]="regform.invalid">Add Retailer</button></h1>
     </div>
   </form >
 

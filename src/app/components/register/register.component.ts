@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import {FormsModule,NgForm,FormGroup} from '@angular/forms';
 import {UserInfoModule} from '../../modules/user-info/user-info.module';
 import { UserInfoService } from '../../services/user-info.service';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -14,11 +16,15 @@ export class RegisterComponent implements OnInit {
   CusUser=new UserInfoModule;
   RetUser=new UserInfoModule;
   svc:UserInfoService;
+  ngzone: NgZone;
+  router: Router;
 
 
   
-  constructor(svc:UserInfoService) { 
+  constructor(svc:UserInfoService,ngzone: NgZone,router: Router) { 
     this.svc=svc;
+    this.ngzone= ngzone;
+    this.router= router;
   }
 
   ngOnInit(): void {
@@ -66,7 +72,18 @@ export class RegisterComponent implements OnInit {
           if(data==true)
           {
          alert('New Retailer Registered');
-         regform.reset();
+        
+
+         if( localStorage.getItem("Email")=="Admin1234@gmail.com"){
+
+          this.ngzone.run(()=>this.router.navigateByUrl('/Admin_View'));
+
+          regform.reset();
+      
+
+          
+
+         }
 
 
           }
