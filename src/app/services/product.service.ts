@@ -70,7 +70,7 @@ UpdateProduct(id:number,newprod:ProductInfoModule):Observable<boolean>{
 }
 
 DeleteProduct(id:number):Observable<boolean>{
-  return this.http.delete<boolean>(this.url + '/DeleteProduct/' + id);
+  return this.http.delete<boolean>(this.url + "/DeleteProduct/" + id);
 }
 
 /*GetCurrentData(){

@@ -135,7 +135,7 @@ body{
   */
 
   .bg{
-    background: url('C:\Online_Shopping\angular-app\src\assets\images\logincover2.jpg');
+    background: url('/assets/images/image5.jpeg');
     
     background-size: 100%;
     height: 100%;

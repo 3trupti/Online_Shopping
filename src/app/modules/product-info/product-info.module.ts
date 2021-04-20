@@ -20,6 +20,7 @@ export class ProductInfoModule {
   Retailer_Email:string;
   Product_Price:number;
   Product_Ouantity :number;
+  Product_Quantity:number;
 
 }
 

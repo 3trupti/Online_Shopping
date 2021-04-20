@@ -5,6 +5,7 @@ import {ProductService} from 'src/app/services/product.service';
 import{ActivatedRoute} from '@angular/router';
 import {AdminInfoModuleModule} from '../../modules/admin-info-module/admin-info-module.module';
 import {AdminInfoServiceService} from '../../services/admin-info-service.service';
+import {UserInfoService} from '../../services/user-info.service'
 
 @Component({
   selector: 'app-update-product',
@@ -14,6 +15,7 @@ import {AdminInfoServiceService} from '../../services/admin-info-service.service
 export class UpdateProductComponent implements OnInit {
 
   model:any=[];
+  svc2:UserInfoService;
   svc1:AdminInfoServiceService;
   imageUrl: string="/assets/images/korean.jpg";  //
   fileToupload :File=null; //
@@ -30,9 +32,10 @@ export class UpdateProductComponent implements OnInit {
   Product_Ouantity :number;
   bind:string;
   rlist:AdminInfoModuleModule[];
-  constructor(svc:ProductService,svc1:AdminInfoServiceService) { 
+  constructor(svc:ProductService,svc1:AdminInfoServiceService,svc2:UserInfoService) { 
     this.svc=svc;
     this.svc1=svc1;
+    this.svc2=svc2;
   }
 
   ngOnInit(): void {
@@ -89,7 +92,7 @@ export class UpdateProductComponent implements OnInit {
     
 
 
-    this.svc.UpdateProduct(this.model.Product_Id,this.prod).subscribe((data:boolean)=>
+    this.svc2.UpdateProduct(this.model.Product_Id,this.prod).subscribe((data:boolean)=>
     {
       if(data == true){
         alert("update sucessful");

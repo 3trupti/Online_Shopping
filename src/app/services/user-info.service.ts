@@ -4,7 +4,7 @@ import {Observer} from 'rxjs';
 import {UserInfoModule} from '../modules/user-info/user-info.module';
 import{Observable} from 'rxjs/internal/observable';
 import {HttpHeaders} from '@angular/common/http';
-
+import {ProductInfoModule} from '../modules/product-info/product-info.module';
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +50,14 @@ export class UserInfoService {
     return this.http.get<number>(this.url+'/'+'GetCartID'+'/'+ email +'/');
     
   }
+
+  DeleteProduct(id:number):Observable<boolean>{
+    return this.http.delete<boolean>(this.url + "/DeleteProduct/" + id);
+  }
  
+  UpdateProduct(id:number,newprod:ProductInfoModule):Observable<boolean>{
+    return this.http.put<boolean>(this.url + "/UpdateProduct" + "/" + id  , newprod ,this.httpOptions);
+  }
 
   
 }

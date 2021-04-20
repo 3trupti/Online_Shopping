@@ -6,6 +6,7 @@ import{ProductInfoModule} from '../../modules/product-info/product-info.module';
 import{Router} from '@angular/router'
 import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler/src/core';
 import { UpdateProductComponent } from '../update-product/update-product.component';
+import {UserInfoService} from '../../services/user-info.service';
 
 @Component({
   selector: 'app-get-product-by-retailer-id',
@@ -21,7 +22,7 @@ export class GetProductByRetailerIDComponent implements OnInit {
    RetailerID:number;
    Price:number;
    Quantity:number;*/
-  
+  svc1:UserInfoService;
    id:number;
    svc: ProductService;
    ngzone:NgZone;
@@ -44,10 +45,11 @@ export class GetProductByRetailerIDComponent implements OnInit {
   
 
 
-  constructor(svc:ProductService,ngzone:NgZone,router:Router) { 
+  constructor(svc:ProductService,ngzone:NgZone,router:Router,svc1:UserInfoService) { 
     this.svc =svc;
     this.ngzone=ngzone;
     this.router=router;
+    this.svc1=svc1;
   }
 
   ngOnInit(): void {
@@ -101,8 +103,9 @@ export class GetProductByRetailerIDComponent implements OnInit {
         
         delete(id:number):void{
           //localStorage.setItem("Product_id",id.toString());
+          alert(id);
 
-          this.svc.DeleteProduct(id).subscribe((data:boolean)=>
+          this.svc1.DeleteProduct(id).subscribe((data:boolean)=>
           {
             
             if(data==true)
@@ -126,14 +129,14 @@ export class GetProductByRetailerIDComponent implements OnInit {
             this.Product_Id=data.Product_Id;
             this.Product_BrandName=data.Product_BrandName;
             this.Product_Description=data.Product_Description;
-            this.Product_Ouantity=data.Product_Ouantity;
+            this.Product_Ouantity=data.Product_Quantity;
             this.Retailer_ID=data.Retailer_ID;
             this.Category_Id=data.Category_Id;
             this.Product_Image=data.Product_Image;
             this.Product_Price=data.Product_Price;
 
             console.log(data);
-            alert(this.Product_Image);
+            alert(this.Product_Ouantity);
 
             localStorage.setItem('Product_BrandName',this.Product_BrandName);
             localStorage.setItem('Product_Description',this.Product_Description);
