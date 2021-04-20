@@ -7,6 +7,8 @@ import { isGeneratedFile } from '@angular/compiler/src/aot/util';
 import {UserInfoService} from '../../../services/user-info.service';
 import {CartDisplayModule} from '../../../modules/cart-display/cart-display.module';
 import {CartServiceService} from '../../../services/cart-service.service';
+import { stringify } from '@angular/compiler/src/util';
+import {HomePageComponent} from '../../../components/home-page/home-page.component';
 
 @Component({
   selector: 'app-header',
@@ -17,10 +19,13 @@ export class HeaderComponent implements OnInit {
   sess:any;
   ngzone: NgZone;
   router: Router;
+  color:string;
+
   
   CartEmail:string;
   svc:UserInfoService;
   svc1:CartServiceService;
+  username:string;
 
   constructor(ngzone:NgZone, router:Router,svc:UserInfoService,svc1:CartServiceService) { 
     this.svc=svc;
@@ -30,6 +35,16 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    
+    //this.ngzone.run(()=>this.router.navigateByUrl('/Home'));
+ this.sess=localStorage.getItem("sess")
+
+    
+    //this.username=localStorage.getItem("Email");
+  
+  
+
     
    // alert(this.sess);
   }
@@ -46,6 +61,7 @@ export class HeaderComponent implements OnInit {
 
   Mobile():void{
     localStorage.setItem("cname","Electronics-Mobile");
+    color:"change";
    if(localStorage.getItem("reload")=="false"){
       localStorage.setItem("reload","true");
 

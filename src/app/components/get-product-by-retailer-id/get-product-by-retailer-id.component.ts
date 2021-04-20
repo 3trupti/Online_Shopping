@@ -4,6 +4,8 @@ import {FormsModule,NgForm,FormGroup} from '@angular/forms';
 import {ProductService} from '../../services/product.service';
 import{ProductInfoModule} from '../../modules/product-info/product-info.module';
 import{Router} from '@angular/router'
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler/src/core';
+import { UpdateProductComponent } from '../update-product/update-product.component';
 
 @Component({
   selector: 'app-get-product-by-retailer-id',
@@ -27,6 +29,18 @@ export class GetProductByRetailerIDComponent implements OnInit {
    store:string;
   prodlist: ProductInfoModule[];
   prod=new ProductInfoModule();
+  Product_Id :number;
+  Product_BrandName:string;
+  Product_Image:string;
+  Product_Description :string;
+  Category_Id: string;
+  Retailer_ID:number;
+  Retailer_Email:string;
+  Product_Price:number;
+  Product_Ouantity :number;
+  bind:string;
+
+
   
 
 
@@ -63,6 +77,7 @@ export class GetProductByRetailerIDComponent implements OnInit {
     this.svc.GetProductById(this.store).subscribe((data:ProductInfoModule[])=>
           {
             
+            
             this.prodlist=data;
             
 
@@ -83,9 +98,13 @@ export class GetProductByRetailerIDComponent implements OnInit {
             
           });
         }
+        
         delete(id:number):void{
+          //localStorage.setItem("Product_id",id.toString());
+
           this.svc.DeleteProduct(id).subscribe((data:boolean)=>
           {
+            
             if(data==true)
             {
             alert('Product Deleted Successfully');
@@ -95,8 +114,50 @@ export class GetProductByRetailerIDComponent implements OnInit {
           {
             alert('Unable to Delete');
           }
-          });
+          });}
+
+
+        Edit(id:number):void{
+          this.bind = '../../../assets/images/';
+
+          localStorage.setItem("Product_id",id.toString());
+          this.svc.GetProductId(id).subscribe((data:ProductInfoModule)=>
+          {
+            this.Product_Id=data.Product_Id;
+            this.Product_BrandName=data.Product_BrandName;
+            this.Product_Description=data.Product_Description;
+            this.Product_Ouantity=data.Product_Ouantity;
+            this.Retailer_ID=data.Retailer_ID;
+            this.Category_Id=data.Category_Id;
+            this.Product_Image=data.Product_Image;
+            this.Product_Price=data.Product_Price;
+
+            console.log(data);
+            alert(this.Product_Image);
+
+            localStorage.setItem('Product_BrandName',this.Product_BrandName);
+            localStorage.setItem('Product_Description',this.Product_Description);
+            localStorage.setItem('Product_Ouantity', this.Product_Ouantity.toString());
+            localStorage.setItem('Retailer_ID',this.Retailer_ID.toString());
+            localStorage.setItem('Category_Id',this.Category_Id);
+            localStorage.setItem('Product_Image',this.Product_Image);
+            localStorage.setItem('Product_Price',this.Product_Price.toString());
+
+            this.ngzone.run(()=>this.router.navigateByUrl('/UpdateP'));
+
+
+
+
+
+          }
+
+          );
+
+
+
+
+        }
       
       }
-    }
+    
 

@@ -7,6 +7,7 @@ import {UserInfoModule} from 'src/app/modules/user-info/user-info.module';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     localStorage.clear();
     localStorage.setItem("reload","false");
+    localStorage.setItem("sess","false");
 
   }
 
@@ -76,7 +78,7 @@ export class LoginComponent implements OnInit {
       alert('Admin Login Successful');
       localStorage.setItem('Email',this.email);
 
-      this.ngzone.run(()=>this.router.navigateByUrl('/AdminHome'));
+      this.ngzone.run(()=>this.router.navigateByUrl('/Admin_View'));
     }
 
     else{

@@ -29,7 +29,7 @@ import { GetProductByCateoryComponent } from './components/get-product-by-cateor
 import { FilterByBrandNameComponent } from './components/filter-by-brand-name/filter-by-brand-name.component';
 import { FilterByPriceComponent } from './components/filter-by-price/filter-by-price.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
-import{CompareProductsComponent} from './components/compare-products/compare-products.component'
+import{CompareProductsComponent} from './components/compare-products/compare-products.component';
 
 
 @NgModule({
@@ -68,6 +68,7 @@ import{CompareProductsComponent} from './components/compare-products/compare-pro
     CustomerHomeComponent,
     OrderDetailsComponent,
     CompareProductsComponent,
+  
 
     
    

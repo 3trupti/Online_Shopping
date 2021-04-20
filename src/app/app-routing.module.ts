@@ -19,6 +19,8 @@ import {FilterByPriceComponent} from './components/filter-by-price/filter-by-pri
 import {FilterByBrandNameComponent} from './components/filter-by-brand-name/filter-by-brand-name.component';
 import {CartComponent} from './components/cart/cart.component';
 import { CompareProductsComponent } from './components/compare-products/compare-products.component';
+import {AdminProfileComponent} from './admin-profile/admin-profile.component'
+
 
  
 
@@ -27,8 +29,9 @@ const routes: Routes= [
   {path:'Home',component:HomePageComponent},
   {path:'Register',component:RegisterComponent},
   {path:'Login',component:LoginComponent},
-
+  {path:'Admin_View' , component:AdminProfileComponent},
   //{path:'UpdateProduct/:ProductID',component:UpdateProductComponent},
+  {path:'UpdateP' , component:UpdateProductComponent},
 
   {path: 'CustomerHome',component:CustomerHomeComponent},
   {path: 'RetailerHome',component:RetailerHomeComponent},

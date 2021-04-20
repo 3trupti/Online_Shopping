@@ -11,7 +11,7 @@ import {ProductInfoModule} from '../modules/product-info/product-info.module';
   providedIn: 'root'
 })
 export class ProductService {
-  prod:ProductInfoModule;
+  prod: ProductInfoModule;
   http:HttpClient;
   url:string='http://localhost:57646/api/User';
   httpOptions={Headers:new HttpHeaders({
@@ -59,14 +59,20 @@ SortByName(cname:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByName'+'/'+cname);
 }
 
+//get product by id
 
-
-/*UpdateProduct(id:number,prod:ProductInfoModule):Observable<boolean>{
-  return this.http.put<boolean>(this.url +"/UpdateProduct/",id,this.httpOptions);
-}*/
-DeleteProduct(id:number):Observable<boolean>{
-  return this.http.delete<boolean>(this.url+'/'+'DeleteProduct'+'/'+id);
+GetProductId(id:number):Observable<ProductInfoModule>{
+  return this.http.get<ProductInfoModule>(this.url +'/'+'GetProductById'+'/'+id);
 }
+
+UpdateProduct(id:number,newprod:ProductInfoModule):Observable<boolean>{
+  return this.http.put<boolean>(this.url + "/UpdateProduct" + "/" + id  + newprod ,this.httpOptions);
+}
+
+DeleteProduct(id:number):Observable<boolean>{
+  return this.http.delete<boolean>(this.url + '/DeleteProduct/' + id);
+}
+
 /*GetCurrentData(){
   return this.http.delete<boolean>(this.url+'/'+'DeleteProduct'+'/'+id);
 }*/

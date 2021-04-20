@@ -4,7 +4,6 @@ import {Observer} from 'rxjs';
 import {UserInfoModule} from '../modules/user-info/user-info.module';
 import{Observable} from 'rxjs/internal/observable';
 import {HttpHeaders} from '@angular/common/http';
-import { ProductinfoModule } from '../modules/productinfo/productinfo.module';
 
 
 @Injectable({

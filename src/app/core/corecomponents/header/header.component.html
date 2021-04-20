@@ -14,7 +14,7 @@
             </a>
           
             <div class="dropdown-menu bg-primary text-white " aria-labelledby="dropdownMenuLink" >
-              <a class="dropdown-item text-white" routerLink="Category"  (click)= "Mobile()" >Electronics-Mobile</a>
+              <a class="dropdown-item text-white"  routerLink="Category"  (click)= "Mobile()" >Electronics-Mobile</a>
               <a class="dropdown-item  text-white" routerLink="Category" (click)="Laptop()">Electronics-Laptop</a>
               <a class="dropdown-item  text-white" routerLink="Category" (click)="TV()">Electronics-TV</a>
               <a class="dropdown-item text-white" routerLink="Category" (click)="Men()">Men-Fashion</a>
@@ -32,14 +32,17 @@
         <!------Adding a drop down menu for account in nav-bar using bootstrap  -->
 
 
-        <li class="nav-item"><a routerLink="Login" class="nav-link text-white">Login</a></li>
+        <li class="nav-item" ><a  routerLink="Login" class="nav-link text-white">Login</a></li>
         
 <!--*ngIf="sess=='false'"-->
 
         <!------Adding a drop down menu for account in nav-bar using bootstrap  -->
         <li class="nav-item"><a  routerLink="Register" class="nav-link text-white">Signup</a></li>
-        <li class="nav-item" ><a  routerLink="Login"  class="nav-link text-white">Logout</a></li>
+        <li class="nav-item"  ><a  routerLink="Login"  class="nav-link text-white">Logout</a></li>
+        <li class="nav-item" > </li>
+
       </ul><!--*ngIf="sess=='true'"    (click)="Logout()"-->
+      
     </div>
   </nav> <!-- End Navigation -->
   <div style="background-image:WebsiteShop\Online_Shopping\src\assets\images\pexels-pixabay-207589"></div>

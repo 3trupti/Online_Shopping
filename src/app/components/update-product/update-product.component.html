@@ -1,58 +1,113 @@
-<!-----
-<div class="container">
-<h1 style="color: black;"><b>Add Product</b></h1>
-<form #AddForm="ngForm" name="#AddForm" (ngSubmit)="UpdateProducts(AddForm)">
-    <div>
-        <label>Product ID</label>
-        <input type="text" name="id" [(ngModel)]="model.id" #id="ngModel" readonly>
-        <span *ngIf="id.errors?.required">ID has to be entered</span>
-    </div>
 
 
-    <div>
-        <label>Brand Name</label>
-        <input type="text" name="brand" [(ngModel)]="model.brand" #brand="ngModel" required>
-        <span *ngIf="brand.errors?.required">Brand name  has to be entered</span>
-    </div>
 
-    <div>
-        <label>Product Image</label>
-        <input type="file" name="img" [(ngModel)]="model.img" #img="ngModel" required>
-        <span *ngIf="img.errors?.required">Image has to be entered</span>
-    </div>
 
-    <div>
-        <label>Product Description</label>
-        <input type="text" name="desc" [(ngModel)]="model.desc" #desc="ngModel" required>
-        <span *ngIf="desc.errors?.required">Description has to be entered</span>
-    </div>
-  
-    <div>
-        <label>Enter Category</label>
-        <input type="text" name="desc" [(ngModel)]="model.desc" #desc="ngModel" required>
-       <select type="text" name="cat" [(ngModel)]="model.cat" #cat="ngModel" required>
-            <option *ngFor="let item of clist" [value]="item.Category_ID">{{item.Category_Name}}</option>
-        </select>
-        
-    </div>
+<div class=" bg h-100">
     
-    
-      
-    <div>
-        <label>Price</label>
-        <input type="number" name="price" [(ngModel)]="model.price" #price="ngModel" required>
-        <span *ngIf="price.errors?.required">Price has to be entered</span>
-    </div>
-    <div>
-        <label>Quantity</label>
-        <input type="number" name="quan" [(ngModel)]="model.quan" #quan="ngModel" required>
-        <span *ngIf="quan.errors?.required">Quantity has to be entered</span>
-    </div>
+    <div class="m-5 container container1 h-75">
+        <form #AddForm="ngForm" name="#AddForm" (ngSubmit)="UpdateProducts(AddForm)"
+            class="bg-light  border shadow-lg p-5 m-5">
+            <h2 style=" padding-top: 10px; text-align: center;"> <span class="badge badge-pill badge-warning">Hey !! You can add new products here..</span></h2>
 
-    
-    <div>
-        <button type="submit" >Update</button>
+            <section class="row">
+                <section class="col-6 clo-sm-4 ">
+
+                    <div class="form-group">
+
+                         <label for="brandname"><b>Brandname</b></label>
+                        <input type="text" class="form-control input-sm" placeholder="Enter Brand Name" name="Product_BrandName"
+                            [(ngModel)]="model.Product_BrandName" #Product_BrandName="ngModel" required>
+                        <br>
+                        <span *ngIf="Product_BrandName.errors?.required">Fill Details</span>
+                    </div>
+                    <!---->
+
+                    <div class="form-group">
+
+                         <label for="Product_Image"><b>Image</b></label>
+                        <img [src]=" imageUrl" style="width:90px;height:90px">
+                        <input type="file" class="form-control" name="Product_Image" id="Product_Image" accept="img/*"
+                            (change)="handleFileInput($event.target.files)" [(ngModel)]="model.Product_Image" #Product_Image="ngModel"
+                            required>
+                        <br>
+                        <span *ngIf="Product_Image.errors?.required">Image has to be entered</span>
+                    </div>
+                    <!---->
+
+                    <div class="form-group">
+                        <label for="desc"><b>Description</b></label>
+                        <input type="text" class="form-control input-sm" placeholder="Enter Description" name="Product_Description"
+                            [(ngModel)]="model.Product_Description" #Product_Description="ngModel" required>
+                        <br>
+                        <span *ngIf="Product_Description.errors?.required">Description has to be entered</span>
+                    </div>
+                    <!---->
+
+
+                    <div class="form-group dropdown">
+
+                        <label for="country"><b>Category :</b></label>
+                        <select name="Category_Id" [(ngModel)]="model.Category_Id" #Category_Id="ngModel" required>
+                            <option class="dropdown-item" name="CAT1" value="CAT1">Electronics-Mobiles</option>
+                            <option class="dropdown-item" name="CAT2" value="CAT2">Electronics-TV</option>
+                            <option class="dropdown-item" name="CAT3" value="CAT3">Electronics-Laptop</option>
+                            <option class="dropdown-item" name="CAT4" value="CAT4">Women's-Fashion</option>
+                            <option class="dropdown-item" name="CAT5" value="CAT5">Men's-Fashion</option>
+                        </select><br>
+                        <span *ngIf="Category_Id.errors?.required">Type must be selected.</span>
+                    </div>
+                    <!---->
+
+
+                </section>
+                
+
+
+                <section class="col-6 clo-sm-4 ">
+                    <div class="form-group">
+                        <label for="state"><b>Retailer ID :</b></label>
+                        <input type="text" name="Retailer_ID" class="form-control input-sm" placeholder="Enter Retailer ID"
+                            [(ngModel)]="model.Retailer_ID" #Retailer_ID="ngModel"  required>
+                        <br>
+                        <span *ngIf="Retailer_ID.errors?.required">ID has to be entered</span>
+                    </div>
+                    
+                    <br>
+                    <br>
+
+
+                    <div class="form-group">
+                        <label for="city"><b>Price:</b></label>
+
+                        <input type="number" name="Product_Price" class="form-control input-sm" placeholder="Enter Price"
+                            [(ngModel)]="model.Product_Price" #Product_Price="ngModel" required>
+                        <br>
+                        <span *ngIf="Product_Price.errors?.required">Price has to be entered</span>
+                    </div>
+                    <!---->
+
+                    <div class="form-group">
+                        <label for="code"><b>Quantity:</b></label>
+
+                        <input type="number" name=" Product_Ouantity" class="form-control input-sm" placeholder="enter quantity"
+                            [(ngModel)]="model.Product_Ouantity" #Product_Ouantity="ngModel" required>
+
+                        <br>
+                        <span *ngIf="Product_Ouantity.errors?.required">Quantity has to be entered</span>
+                    </div>
+                    <!---->
+                    <br>
+                    <div class="form-group">
+
+                        <button type="submit" class="btn btn-primary btn-block" [disabled]="AddForm.invalid">Update
+                            Product</button>
+                    </div>
+
+
+                </section>
+
+
+            </section>
+        </form>
     </div>
-</form>
 </div>
--->

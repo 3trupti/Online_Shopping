@@ -34,8 +34,10 @@
                    
                     <td>{{item.Product_Price}}</td>
                     
+                    
+
                     <td><span *ngIf="item.Product_Quantity==0" style="color: red;" >OutofStock</span>
-                        <button class="btn btn-success btn-lg" *ngIf="!item.Product_Quantity==0" (click)="AddToCart((item.Product_Id))">AddCart</button></td>
+                        <button class="btn btn-success btn-lg" *ngIf="!item.Product_Quantity==0" (click)="AddToCart((item.Product_Id))">AddToCart</button></td>
             
             
             
