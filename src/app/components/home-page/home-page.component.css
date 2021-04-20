@@ -44,3 +44,27 @@ a{
     padding-right: 25px;
 }*/
 
+body{
+    font-family:poppins;
+}
+
+.carousel-item{
+    height: 100vh;
+    min-height: 300px;
+}
+.carousel-caption{
+    bottom:220px;
+}
+.carousel-caption h5{
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    margin-top: 25px;
+    font-weight: 900;
+}
+.carousel-caption p{
+    font-size:18px;
+    margin:auto;
+    width:60%;
+    line-height: 1.9;
+}
