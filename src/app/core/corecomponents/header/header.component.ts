@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
  this.sess=localStorage.getItem("sess")
 
     
-    //this.username=localStorage.getItem("Email");
+    this.username=localStorage.getItem("Email");
   
   
 

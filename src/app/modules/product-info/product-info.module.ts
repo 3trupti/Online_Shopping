@@ -21,6 +21,7 @@ export class ProductInfoModule {
   Product_Price:number;
   Product_Ouantity :number;
   Product_Quantity:number;
+  Prod :number;
 
 }
 

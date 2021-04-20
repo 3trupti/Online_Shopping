@@ -30,6 +30,8 @@ import { FilterByBrandNameComponent } from './components/filter-by-brand-name/fi
 import { FilterByPriceComponent } from './components/filter-by-price/filter-by-price.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import{CompareProductsComponent} from './components/compare-products/compare-products.component';
+import { ProductAcceptComponent } from './components/product-accept/product-accept.component';
+import { UAdminProductComponent } from './components/uadmin-product/uadmin-product.component';
 
 
 @NgModule({
@@ -68,6 +70,8 @@ import{CompareProductsComponent} from './components/compare-products/compare-pro
     CustomerHomeComponent,
     OrderDetailsComponent,
     CompareProductsComponent,
+    ProductAcceptComponent,
+    UAdminProductComponent,
   
 
     

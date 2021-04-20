@@ -1,0 +1,51 @@
+<body >
+    <div class="jumbotron bg">
+        <div class="card">
+            <div class="card-header">
+                <H1 style="text-align: center;"><i><b><span class="badge badge-pill badge-lg badge-warning">Products</span></b></i></H1>
+            </div>
+            <div card="card-body">
+                <div class="table-responsive">
+                    <table class="table table-dark ">
+
+                        <tr>
+                            <th scope="col">ProductID</th>
+                            <th scope="col">BrandName</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">CategoryID</th>
+                            <th scope="col">RetailerID</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                      
+                  
+                        
+                        <tr *ngFor="let item of prodData">
+
+                        
+                        <td>{{item.Product_Id}}</td>
+                        <td>{{item.Product_BrandName}}</td>
+                        <td>{{item.Product_Image}}</td>
+                        <td>{{item.Product_Description}}</td>
+                        <td>{{item.Category_Id}}</td>
+                        <td>{{item.Retailer_ID}}</td>
+                        <td>{{item.Product_Price}}</td>
+                        <td>{{item.Product_Quantity}}</td>
+
+                        <td><button  class="btn btn-success" (click)="Approve(item.Product_Id)">Approve</button></td>
+                        <!--<td><button  class="btn btn-success" (click)="Decline()">Delete</button></td>-->
+
+                       
+                    </tr>
+                  
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+

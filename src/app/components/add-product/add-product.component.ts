@@ -35,6 +35,7 @@ export class AddProductComponent implements OnInit {
   svc2:UserInfoService;
   ulist:UserInfoModule[];
   prod= new UserInfoModule();
+  
   ngzone: NgZone;
   router: Router;
 
@@ -89,8 +90,18 @@ AddProducts(AddForm:NgForm):void
     this.prod.Product_Price=AddForm.value.price;
     this.prod.Product_Ouantity=AddForm.value.quan;
 
+
+    this.svc2.ProductAccept(this.prod).subscribe((data:boolean)=> {
+    alert(data);
+    if(data==true)
+    {
+      alert('New Product Added');
+    }
+  });
+}
+
     //console.log(this.prod.Product_Image);
-    this.svc2.InsertNewProduct(this.prod).subscribe((data:boolean)=> {
+   /* this.svc2.InsertNewProduct(this.prod).subscribe((data:boolean)=> {
       alert(data);
       if(data==true)
       {
@@ -98,5 +109,5 @@ AddProducts(AddForm:NgForm):void
       }
     });
   }
-
+*/
 }

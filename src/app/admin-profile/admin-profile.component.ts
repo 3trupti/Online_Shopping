@@ -53,6 +53,11 @@ export class AdminProfileComponent implements OnInit {
 
   }
 
+  ApproveProduct():void{
+    this.ngzone.run(()=>this.router.navigateByUrl('/ProductAccept'));
+
+
+  }
 
 
 

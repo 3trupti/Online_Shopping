@@ -1,7 +1,9 @@
 
 <div class=" bg h-100">
     
+    
     <div class="m-5 container container1 h-75">
+        
         <form #AddForm="ngForm" name="#AddForm" (ngSubmit)="AddProducts(AddForm)"
             class="bg-light  border shadow-lg p-5 m-5">
             <h2 style=" padding-top: 10px; text-align: center;"> <span class="badge badge-pill badge-warning">Hey !! You can add new products here..</span></h2>
@@ -106,6 +108,10 @@
 
             </section>
         </form>
+        <h2 style="padding: 13px;">
+            <span class="badge badge-warning badge-lg" >
+            <a routerLink="/Retailer_View">Go Back</a></span></h2>
+        
     </div>
 </div>
 

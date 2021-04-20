@@ -121,7 +121,6 @@ export class GetProductByRetailerIDComponent implements OnInit {
 
 
         Edit(id:number):void{
-          this.bind = '../../../assets/images/';
 
           localStorage.setItem("Product_id",id.toString());
           this.svc.GetProductId(id).subscribe((data:ProductInfoModule)=>

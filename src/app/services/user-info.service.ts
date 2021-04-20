@@ -59,5 +59,25 @@ export class UserInfoService {
     return this.http.put<boolean>(this.url + "/UpdateProduct" + "/" + id  , newprod ,this.httpOptions);
   }
 
+  ProductAccept(prod:UserInfoModule):Observable<boolean>{
+    const endpoint="http://localhost:57646/api/UserApi/ProductAccept";
+    return this.http.post<boolean>(endpoint,prod,this.httpOptions);
+  }
+
+  ProductGet():Observable<ProductInfoModule[]>
+{
+  return this.http.get<ProductInfoModule[]>(this.url+'/'+'ProductGet');
+}
+
+ProdAcceptId(id:number):Observable<ProductInfoModule>{
+  return this.http.get<ProductInfoModule>(this.url +'/'+'ProdAcceptId'+'/'+id);
+}
   
+AdminAddProduct(prod: UserInfoModule) : Observable<boolean>
+  {
+    const endpoint="http://localhost:57646/api/UserApi/AdminAddProduct";
+    return this.http.post<boolean>(endpoint,prod,this.httpOptions);
+  }
+
+
 }

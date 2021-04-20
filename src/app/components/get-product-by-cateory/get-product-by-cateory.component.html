@@ -1,11 +1,82 @@
 <div style="background-color:black;">
 
     <h1>QuickShop</h1>
+    
 
 </div>
 <div class="container-fluid bg">
+    <div class="table-responsive" > 
+        <table >
+            <tr>
+                <td>
 
-    <H1><i><b><span class="badge badge-pill badge-warning badge-lg"><i>...........</i></span></b></i></H1>
+                    <form #regform="ngForm" class="form-group" name="regform" (ngSubmit)="Product(regform)">
+                        <div class="container">
+                            <td>
+                                <br>
+                                <label for="cname" ><b>Brand</b></label>
+                                <select style="height:50px ;width:150px;" name="bname" [(ngModel)]="model.bname" #bname="ngModel"
+                                    required>
+                                    <option style="height:50px ;width:150px; color: red;" value="Levis">Levis</option>
+                                    <option style="height:50px ;width:150px; color: red;" value="Vero Moda">Vero Moda</option>
+                                    <option style="height:50px ;width:150px; color: red;" value="Roadster">Roaster</option>
+                                    <option style="height:50px ;width:150px; color: red;" value="Samsung">Samsung</option>
+                                    <option style="height:50px ;width:150px; color: red;" value="MI">MI</option>
+                                </select><br>
+                                <br>
+                            </td>
+                            <td>
+                                <br>
+                                <button class="btn btn-success btn-lg" bname="submit" [disabled]="regform.invalid">FILTER</button>
+                            </td>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form #regform="ngForm" class="form-group" name="regform" (ngSubmit)="Product1(regform)">
+                        <div class="container">
+                
+                            <div>
+                                <td>
+                                    <br>
+                                    <label for="bname"><b>Price</b></label>
+                                    <select style="height:50px ;width:150px;" name="bname" [(ngModel)]="model.bname" #bname="ngModel"
+                                        required>
+                                        <option style="height:50px ;width:150px; color: red;" value="1500">Less than 1500</option>
+                                        <option style="height:50px ;width:150px; color: red;" value="3000">Less than 3000</option>
+                                        <option style="height:50px ;width:150px; color: red;" value="5000">Less than 5000</option>
+                                        <option style="height:50px ;width:150px; color: red;" value="7000">Less than 8000</option>
+                                        <option style="height:50px ;width:150px; color: red;" value="100000">8000+</option>
+                                    </select><br>
+                                    <br>
+                                </td>
+                                <td>
+                                    <br>
+                                    <button class="btn btn-success btn-lg" bname="submit" [disabled]="regform.invalid">FILTER</button>
+                                </td>
+                            </div>
+                        </div>
+                    </form>
+                
+                   
+
+                </td>
+                <td>
+                    <div style="align-content: center;">
+                        <button class="btn btn-success btn-lg" (click)='SortbyName()'>SortByName</button>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <button class="btn btn-success btn-lg" (click)='SortbyPrice()'>SortByPrice</button>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    
 
    
 
@@ -43,62 +114,13 @@
             
                 </tr>
             </table>
-            <form #regform="ngForm" class="form-group" name="regform" (ngSubmit)="Product(regform)">
-
-                <div class="container">
-                    <td>
-                        <br>
-                        <label for="cname"><b>Brand</b></label>
-                        <select style="height:50px ;width:150px;" name="bname" [(ngModel)]="model.bname" #bname="ngModel"
-                            required>
-                            <option style="height:50px ;width:150px; color: red;" value="Levis">Levis</option>
-                            <option style="height:50px ;width:150px; color: red;" value="VeroModa">Vero Moda</option>
-                            <option style="height:50px ;width:150px; color: red;" value="Roadster">Roaster</option>
-                            <option style="height:50px ;width:150px; color: red;" value="Samsung">Samsung</option>
-                            <option style="height:50px ;width:150px; color: red;" value="MI">MI</option>
-                        </select><br>
-                        <br>
-                    </td>
-                    <td>
-                        <br>
-                        <button class="btn btn-success btn-lg" bname="submit" [disabled]="regform.invalid">FILTER</button>
-                    </td>
-                </div>
-            </form>
+           
             
            
-            <form #regform="ngForm" class="form-group" name="regform" (ngSubmit)="Product1(regform)">
-                <div class="container">
-        
-                    <div>
-                        <td>
-                            <br>
-                            <label for="bname"><b>Price</b></label>
-                            <select style="height:50px ;width:150px;" name="bname" [(ngModel)]="model.bname" #bname="ngModel"
-                                required>
-                                <option style="height:50px ;width:150px; color: red;" value="1500">Less than 1500</option>
-                                <option style="height:50px ;width:150px; color: red;" value="3000">Less than 3000</option>
-                                <option style="height:50px ;width:150px; color: red;" value="5000">Less than 5000</option>
-                                <option style="height:50px ;width:150px; color: red;" value="7000">Less than 8000</option>
-                                <option style="height:50px ;width:150px; color: red;" value="100000">8000+</option>
-                            </select><br>
-                            <br>
-                        </td>
-                        <td>
-                            <br>
-                            <button class="btn btn-success btn-lg" bname="submit" [disabled]="regform.invalid">FILTER</button>
-                        </td>
-                    </div>
-                </div>
-            </form>
-        
-            <div style="align-content: center;">
-                <button class="btn btn-success btn-lg" (click)='SortbyName()'>Sort=>Name</button>
-            </div>
+           
+            
             <br>
-            <div>
-                <button class="btn btn-success btn-lg" (click)='SortbyPrice()'>Sort=>Price</button>
-            </div>
+            
             <br>
             <br>
             <br>
