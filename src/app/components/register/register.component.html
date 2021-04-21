@@ -81,6 +81,12 @@
 
                 </div>
             </section>
+            <div>
+                <ngx-recaptcha2 #captchaElem [siteKey]="siteKey">
+                  </ngx-recaptcha2>
+                </div>
+            
+
             <div class="form-group">
 
                 <button type="submit" class="btn btn-primary btn-block"[disabled]="regform.invalid">Register</button>

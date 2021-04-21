@@ -59,7 +59,7 @@ SortByName(cname:string):Observable<ProductInfoModule[]>{
   return this.http.get<ProductInfoModule[]>(this.url +'/'+'SortByName'+'/'+cname);
 }
 
-//get product by id
+//get product by id to update
 
 GetProductId(id:number):Observable<ProductInfoModule>{
   return this.http.get<ProductInfoModule>(this.url +'/'+'GetProductById'+'/'+id);

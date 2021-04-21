@@ -59,6 +59,9 @@ export class HeaderComponent implements OnInit {
     
   }*/
 
+  
+
+  
   Mobile():void{
     localStorage.setItem("cname","Electronics-Mobile");
     color:"change";

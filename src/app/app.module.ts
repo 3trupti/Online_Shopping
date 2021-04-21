@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxCaptchaModule } from 'ngx-captcha';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -85,6 +87,7 @@ import { UAdminProductComponent } from './components/uadmin-product/uadmin-produ
     HttpClientModule,
     RouterModule,
     CoreModule,
+    NgxCaptchaModule
 
     
     

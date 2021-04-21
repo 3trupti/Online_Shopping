@@ -85,6 +85,11 @@ export class CartComponent implements OnInit {
 
       }
 
+      Place():void{
+        alert("Order Placed");
+
+      }
+
 
 
 

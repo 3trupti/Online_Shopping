@@ -18,10 +18,12 @@ export class RegisterComponent implements OnInit {
   svc:UserInfoService;
   ngzone: NgZone;
   router: Router;
+  siteKey:string;
 
 
   
-  constructor(svc:UserInfoService,ngzone: NgZone,router: Router) { 
+  constructor(svc:UserInfoService,ngzone: NgZone,router: Router ) { 
+    this.siteKey ='6LeRMqwaAAAAAGI-aNROMnsfNrkFmGSThh0fFZTL';
     this.svc=svc;
     this.ngzone= ngzone;
     this.router= router;
